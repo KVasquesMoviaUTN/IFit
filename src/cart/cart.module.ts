@@ -3,7 +3,7 @@ import { CartController } from './cart.controller';
 import { CartService } from './cart.service';
 
 @Module({
-  controllers: [CartController], // Registra el controlador
-  providers: [CartService],      // Registra el servicio
+  controllers: [CartController],
+  providers: [CartService],
 })
 export class CartModule {}

@@ -28,4 +28,7 @@ export class Product {
 
   @Column()
   unidad: string; 
+
+  @Column()
+  purchase_price: number; 
 }

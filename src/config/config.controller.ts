@@ -8,6 +8,8 @@ export class ConfigController {
       whatsappNumber: process.env.WHATSAPP_NUMBER,
       cantidadParaDescuento: process.env.CANTIDAD_PARA_DESCUENTO,
       descuento: process.env.DESCUENTO,
+      address: process.env.ADDRESS,
+      mail: process.env.MAIL,
     };
   }
 }

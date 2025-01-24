@@ -9,5 +9,4 @@ export const databaseConfig: TypeOrmModuleOptions = {
   database: 'IFit',
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   synchronize: false, // Use only for development!
-  
 };
