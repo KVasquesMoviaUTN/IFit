@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Sale } from 'src/sales/entities/sale.entity';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 
-@Entity('usuarios')
+@Entity('users')
 export class Users {
   @PrimaryGeneratedColumn()
   id: number;
@@ -28,4 +29,7 @@ export class Users {
 
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
+
+  @OneToMany(() => Sale, (sale) => sale.user)
+  sales: Sale[]
 }

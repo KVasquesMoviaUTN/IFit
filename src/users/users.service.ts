@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { QueryFailedError, Repository } from 'typeorm';
 import { Users } from './user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -14,16 +14,23 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto): Promise<Users> {
-    const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
-    const user = this.usersRepository.create({ 
-      password: hashedPassword,
-      name: createUserDto.name,
-      mail: createUserDto.mail, 
-      phone: createUserDto.phone,
-      address: createUserDto.address,
-      surname: createUserDto.surname,
-    });
-    return this.usersRepository.save(user);
+    try {
+      const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+      const user = this.usersRepository.create({ 
+        password: hashedPassword,
+        name: createUserDto.name,
+        mail: createUserDto.mail, 
+        phone: createUserDto.phone,
+        address: createUserDto.address,
+        surname: createUserDto.surname,
+      });
+      return this.usersRepository.save(user);
+    } catch (error) {
+      if (error instanceof QueryFailedError && error.message.includes('duplicate key value violates unique constraint')) {
+        throw new Error('El correo electrónico ya está en uso. Por favor, elija otro.');
+      }
+      throw error;
+    }
   }
 
   async findAll(): Promise<Users[]> {

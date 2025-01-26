@@ -22,6 +22,17 @@ export class AuthService {
       return null;
     }
 
-    return user;
+    const { id, name, surname, mail: userMail, address, phone } = user;
+
+    return { message: 'Inicio de sesión exitoso',     
+      user: {
+        id,
+        name,
+        phone,
+        address,
+        surname,
+        mail: userMail,
+      }, 
+    };
   }
 }

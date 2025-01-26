@@ -34,7 +34,7 @@ export class ProductsController {
   }
 
   @Post('/finalTotal')
-  getTotalFinalPrice(@Body() body: { cart: { price: number, quantity: number }[] }): Promise<number | null> {
+  getTotalFinalPrice(@Body() body: { cart: { price: number, productId: number, quantity: number }[] }): Promise<number | null> {
     return this.productsService.getTotalFinalPrice(body.cart);
   }
   

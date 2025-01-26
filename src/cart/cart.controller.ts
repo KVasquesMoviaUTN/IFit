@@ -33,7 +33,7 @@ export class CartController {
   }
 
   @Post('purchase')
-  async purchase(@Body() cart: { items: Array<{ productId: number; quantity: number }> }) {
+  async purchase(@Body() cart: { items: Array<{ price: number, productId: number; quantity: number }> }) {
     try {
       const success = await this.cartService.purchase(cart.items);
       if (success) {

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, HttpException, HttpStatus } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { Users } from './user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -10,7 +10,14 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto): Promise<Users> {
-    return this.usersService.create(createUserDto);
+    try {
+      return this.usersService.create(createUserDto);
+    } catch (error) {
+      if (error.message === 'El correo electrónico ya está en uso. Por favor, elija otro.') {
+        throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      }
+      throw error;
+    }
   }
 
   @Get()
@@ -26,9 +33,9 @@ export class UsersController {
   @Put(':id')
   update(
     @Param('id') id: number,
-    @Body() updateProductDto: UpdateUserDto,
+    @Body() updateUserDto: UpdateUserDto,
   ): Promise<Users | null> {
-    return this.usersService.update(id, updateProductDto);
+    return this.usersService.update(id, updateUserDto);
   }
 
   @Delete(':id')

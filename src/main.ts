@@ -8,11 +8,17 @@ async function bootstrap() {
 
   app.enableCors();
 
-    app.useGlobalPipes(new ValidationPipe({
-      transform: true,
-      whitelist: false,
-      forbidNonWhitelisted: true,
+  app.useGlobalPipes(new ValidationPipe({
+    transform: true,
+    whitelist: false,
+    forbidNonWhitelisted: true,
     }));
+
+    // app.enableCors({
+    //   origin: 'https://localhost:8080',
+    //   allowedHeaders: 'Content-Type,Authorization',
+    // });
+    
 
   await app.listen(3000);
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { AddCartDto } from './dto/add-cart.dto';
+import { ProductsService } from 'src/products/products.service';
 
 export interface CartItem {
   productId: number;
@@ -8,6 +9,10 @@ export interface CartItem {
 
 @Injectable()
 export class CartService {
+  constructor(
+    private readonly productsService: ProductsService,
+  ) {}
+
   private cart: CartItem[] = [];
 
   async addToCart(addCartDto: AddCartDto): Promise<void> {
@@ -40,9 +45,11 @@ export class CartService {
     return Promise.resolve();
   }
 
-  async purchase(items: Array<{ productId: number; quantity: number }>): Promise<boolean> {
-    console.log('Procesando compra para los siguientes items:', items);
-//TODO
+
+  async purchase(cart: { price: number, productId: number, quantity: number }[]): Promise<boolean> {
+    const totalFinalPrice = await this.productsService.getTotalFinalPrice(cart);
+    
+    
     return true;
   }
 
