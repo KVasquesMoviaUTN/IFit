@@ -9,20 +9,14 @@ export class Sale {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  name: string;
-
-	@Column()
-	quantity: number;
-
 	@Column('decimal', { precision: 10, scale: 2 })
 	total: number;
 
   @CreateDateColumn({ type: 'timestamp' })
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn({ type: 'timestamp' })
-  updatedAt: Date;
+  updated_at: Date;
 
   @ManyToOne(() => Users, (user) => user.sales, { nullable: true })
   @JoinColumn({ name: 'user_id' })

@@ -46,12 +46,7 @@ export class CartService {
   }
 
 
-  async purchase(cart: { price: number, productId: number, quantity: number }[]): Promise<boolean> {
-    const totalFinalPrice = await this.productsService.getTotalFinalPrice(cart);
-    
-    
-    return true;
-  }
+
 
   
 }

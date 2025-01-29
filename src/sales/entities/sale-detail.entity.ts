@@ -7,16 +7,17 @@ export class SaleDetail {
   @PrimaryGeneratedColumn()
   id: number;
 
-	@OneToMany(() => Product, (product) => product.category)
-  products: Product[];
+  @ManyToOne(() => Product, (product) => product.saleDetail)
+  @JoinColumn({ name: 'product_id' })
+  product: Product;
 
 	@Column()
 	quantity: number;
 
-	@Column()
-	unit_price: number;
+	@Column('decimal', { precision: 10, scale: 2 })
+	subtotal: number;
 
-  @ManyToOne(() => Sale, (sale) => sale.saleDetail, { nullable: true })
+  @ManyToOne(() => Sale, (sale) => sale.saleDetail)
   @JoinColumn({ name: 'sale_id' })
   sale: Sale;
 }

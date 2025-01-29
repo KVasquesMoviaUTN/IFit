@@ -4,7 +4,6 @@ import { Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { CartItemDto } from 'src/cart/dto/cart-item.dto';
 
 @Injectable()
 export class ProductsService {
@@ -35,7 +34,7 @@ export class ProductsService {
     await this.productsRepository.delete(id);
   }
 
-  async getPrice(id: number, quantity: number): Promise<number | null> {
+  async getPrice(id: number, quantity: number): Promise<number> {
     const product = await this.productsRepository.findOne({ where: { id } });
   
     if (!product) 
@@ -54,7 +53,7 @@ export class ProductsService {
     return Math.round(totalPrice);
   }
 
-  async getTotalFinalPrice(cart: { price: number, productId: number, quantity: number }[]): Promise<number | null> {
+  async getTotalFinalPrice(cart: { productId: number, quantity: number }[]): Promise<number> {
     let totalPrice = 0;
   
     for (const product of cart) {
@@ -62,9 +61,6 @@ export class ProductsService {
   
       if (!productSafe)
         throw new Error(`Producto con ID ${product.productId} no encontrado`);
-  
-      if (productSafe.price !== product.price)
-        throw new Error(`El precio del producto con ID ${product.productId} no coincide`);
   
       totalPrice += this.calculateDiscount(productSafe.price, product.quantity);
     }
