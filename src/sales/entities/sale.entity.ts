@@ -12,6 +12,9 @@ export class Sale {
 	@Column('decimal', { precision: 10, scale: 2 })
 	total: number;
 
+  @Column()
+	shipping: number;
+
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 

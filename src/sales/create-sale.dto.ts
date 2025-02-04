@@ -4,6 +4,8 @@ export class CreateSaleDto {
   @IsInt()
   user: number;
 
+  address;
+
   saleDetails: {
     productId: number;
     quantity: number;

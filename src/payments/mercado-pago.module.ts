@@ -5,5 +5,6 @@ import { MercadoPagoService } from './mercadopago.service';
 @Module({
   controllers: [MercadoPagoController],
   providers: [MercadoPagoService],
+  exports: [MercadoPagoService]
 })
 export class MercadoPagoModule {}

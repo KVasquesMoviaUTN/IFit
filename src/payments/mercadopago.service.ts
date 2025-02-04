@@ -17,9 +17,10 @@ export class MercadoPagoService {
         items: [
           {
             id: "1",
-            title: 'Dietetica I Fit',
             quantity: 1,
-            unit_price: price
+            unit_price: price,
+            title: 'Dietetica I Fit',
+            // "category_id": "",
           }
         ],
         // back_urls: [

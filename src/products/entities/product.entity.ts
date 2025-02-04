@@ -16,9 +16,6 @@ export class Product {
   @Column()
   description: string;
 
-  @Column()
-  serial: string;
-
   @Column({nullable: true})
   image: string;
 
@@ -32,7 +29,10 @@ export class Product {
   unidad: string; 
 
   @Column()
-  purchase_price: number; 
+  informacion_nutricional: string; 
+
+  @Column()
+  display_order: number; 
   
   @ManyToOne(() => Category, (category) => category.products, { nullable: true })
   @JoinColumn({ name: 'category_id' })

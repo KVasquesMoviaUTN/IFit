@@ -8,9 +8,10 @@ import { ProductsModule } from 'src/products/products.module';
 import { SaleStatus } from './entities/sale-status.entity';
 import { PaymentMethod } from './entities/payment-method.entity';
 import { Users } from 'src/users/user.entity';
+import { MercadoPagoModule } from 'src/payments/mercado-pago.module';
 
 @Module({
-	imports: [TypeOrmModule.forFeature([Sale, SaleDetail, SaleStatus, PaymentMethod, Users]), ProductsModule],
+	imports: [TypeOrmModule.forFeature([Sale, SaleDetail, SaleStatus, PaymentMethod, Users]), ProductsModule, MercadoPagoModule],
   providers: [SalesService],
   controllers: [SalesController],
   exports: [SalesService]

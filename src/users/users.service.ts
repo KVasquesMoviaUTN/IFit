@@ -42,7 +42,13 @@ export class UsersService {
   }
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<Users | null> {
+    if (updateUserDto.password) {
+      const hashedPassword = await bcrypt.hash(updateUserDto.password, 10);
+      updateUserDto.password = hashedPassword;
+    }
+
     await this.usersRepository.update(id, updateUserDto);
+  
     return this.usersRepository.findOne({ where: { id } });
   }
 

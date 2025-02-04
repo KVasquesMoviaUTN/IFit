@@ -21,16 +21,4 @@ export class CartController {
     }
     return updatedItem;
   }
-
-  @Get()
-  getCart(): Promise<CartItem[]> {
-    return this.cartService.getCart();
-  }
-
-  @Delete(':productId')
-  removeFromCart(@Param('productId') productId: number): Promise<void> {
-    return this.cartService.removeFromCart(productId);
-  }
-
-
 }
