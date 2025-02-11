@@ -14,7 +14,7 @@ export const databaseConfig: TypeOrmModuleOptions = {
   // url: process.env.DATABASE_URL,
   url: 'postgresql://neondb_owner:npg_B4jdtyJ9wHSf@ep-fragrant-cherry-a5og2mdt-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require',
   autoLoadEntities: true,
-  synchronize: true,//false en produccion
+  synchronize: false,//false en produccion
   ssl: {
     rejectUnauthorized: false,
   },
