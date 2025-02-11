@@ -8,7 +8,7 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3000;
 
-  app.enableCors({ origin: '*' });
+  app.enableCors({ origin: process.env.DATABASE_URL });
 
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
