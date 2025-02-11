@@ -21,4 +21,9 @@ export class CartController {
     }
     return updatedItem;
   }
+
+  // @Get()
+  // findAll(): Promise<CartItem[]> {
+  //   return this.cartService.findAll();
+  // }
 }

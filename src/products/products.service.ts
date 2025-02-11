@@ -18,7 +18,7 @@ export class ProductsService {
   }
 
   async findAll(): Promise<Product[]> {
-    return this.productsRepository.find();
+    return this.productsRepository.find({ relations: ['presentation'], });
   }
 
   async findOne(id: number): Promise<Product | null> {
@@ -34,13 +34,29 @@ export class ProductsService {
     await this.productsRepository.delete(id);
   }
 
-  async getPrice(id: number, quantity: number): Promise<number> {
-    const product = await this.productsRepository.findOne({ where: { id } });
-  
+  async getPrice(id: number, quantity: number, presentationId?: number): Promise<number> {
+    const product = await this.productsRepository.findOne({
+      where: { id },
+      relations: ['presentation']
+    });  
+
     if (!product) 
       throw new Error(`Product with id ${id} not found`);
 
-    return this.calculateDiscount(product.price, quantity)
+    let price: number;
+
+    if (presentationId) {
+      const presentation = product.presentation.find(p => p.id === presentationId);
+      
+      if (!presentation) 
+        throw new Error(`Presentation with id ${presentationId} not found for product ${id}`);
+  
+      price = presentation.price;
+    } else {
+      price = product.price;
+    }
+
+    return this.calculateDiscount(price, quantity);
   }
 
   async getTotalPrice(cart: { price: number, quantity: number }[]): Promise<number | null> {

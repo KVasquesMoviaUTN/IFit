@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { AddCartDto } from './dto/add-cart.dto';
 import { ProductsService } from 'src/products/products.service';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 export interface CartItem {
   productId: number;
@@ -11,6 +13,9 @@ export interface CartItem {
 export class CartService {
   constructor(
     private readonly productsService: ProductsService,
+
+    // @InjectRepository(Product)
+    // private productsRepository: Repository<CartItem>,
   ) {}
 
   private cart: CartItem[] = [];
@@ -45,7 +50,9 @@ export class CartService {
     return Promise.resolve();
   }
 
-
+  // async findAll(): Promise<CartItem[]> {
+  //   return this.productsRepository.find({ relations: ['presentation'], });
+  // }
 
 
   
