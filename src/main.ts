@@ -6,7 +6,9 @@ import type { NestExpressApplication } from '@nestjs/platform-express';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  app.enableCors();
+  const port = process.env.PORT || 3000;
+
+  app.enableCors({ origin: '*' });
 
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
@@ -20,6 +22,6 @@ async function bootstrap() {
     // });
     
 
-  await app.listen(3000);
+  await app.listen(port);
 }
 bootstrap();
