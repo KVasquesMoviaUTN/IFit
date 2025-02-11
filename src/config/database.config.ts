@@ -1,5 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { config } from 'dotenv';
+import { Category } from 'src/products/entities/category.entity';
+import { Product } from 'src/products/entities/product.entity';
 
 config();
 
@@ -13,6 +15,7 @@ export const databaseConfig: TypeOrmModuleOptions = {
   // entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   // url: process.env.DATABASE_URL,
   url: 'postgresql://modofitsql_user:E99nHiIQO9CFgg7cpAhcP0imAW6LuLBy@dpg-culqbran91rc73eh3cog-a.oregon-postgres.render.com/modofitsql',
+  entities: [Product, Category],
   autoLoadEntities: true,
   synchronize: false,//false en produccion
   ssl: {
