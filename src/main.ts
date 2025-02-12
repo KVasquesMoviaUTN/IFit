@@ -11,7 +11,7 @@ async function bootstrap() {
     'http://localhost:3000',
   ];
 
-  const port = process.env.PORT || 3000;
+  // const port = process.env.PORT || 3000;
 
   app.enableCors({ origin: process.env.DATABASE_URL });
 
@@ -33,6 +33,6 @@ async function bootstrap() {
       credentials: true,
     });
 
-  await app.listen(port);
+  await app.listen(3000);
 }
 bootstrap();
