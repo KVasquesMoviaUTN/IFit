@@ -8,14 +8,12 @@ import { databaseConfig } from './config/database.config';
 import { ProductsModule } from './products/products.module';
 import { ConfigController } from './config/config.controller';
 import { MercadoPagoModule } from './payments/mercado-pago.module';
-import { AppDataSource } from './data-source';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    TypeOrmModule.forRoot(AppDataSource.options),
     TypeOrmModule.forRoot(databaseConfig),
     MercadoPagoModule,
     ProductsModule,

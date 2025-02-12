@@ -15,6 +15,8 @@ async function bootstrap() {
 
   app.enableCors({ origin: process.env.DATABASE_URL });
 
+  console.log(process.env.DATABASE_URL);
+
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
     whitelist: false,
