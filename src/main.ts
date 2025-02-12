@@ -11,22 +11,15 @@ async function bootstrap() {
     'http://localhost:3000',
   ];
 
-  // const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3000;
 
   app.enableCors({ origin: process.env.DATABASE_URL });
-
-  console.log(process.env.DATABASE_URL);
 
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
     whitelist: false,
     forbidNonWhitelisted: true,
   }));
-
-    // app.enableCors({
-    //   origin: 'https://localhost:8080',
-    //   allowedHeaders: 'Content-Type,Authorization',
-    // });
     
     app.enableCors({
       origin: (origin, callback) => {
@@ -40,7 +33,6 @@ async function bootstrap() {
       credentials: true,
     });
 
-  // await app.listen(port);
-  await app.listen(3000);
+  await app.listen(port);
 }
 bootstrap();
