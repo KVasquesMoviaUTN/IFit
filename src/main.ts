@@ -7,7 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   const allowedOrigins = [
-    'https://modofit-five.vercel.app',
+    process.env.FRONTEND_URL,
+    // 'https://modofit-five.vercel.app',
     'http://localhost:3000',
   ];
 
