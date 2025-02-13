@@ -29,12 +29,12 @@ export class ProductsController {
   }
 
   @Post('/total')
-  getTotalPrice(@Body() body: { cart: { price: number, quantity: number }[] }): Promise<number | null> {
+  getTotalPrice(@Body() body: { cart: { productId: number, quantity: number }[] }): Promise<number | null> {
     return this.productsService.getTotalPrice(body.cart);
   }
 
   @Post('/finalTotal')
-  getTotalFinalPrice(@Body() body: { cart: { price: number, productId: number, quantity: number }[] }): Promise<number | null> {
+  getTotalFinalPrice(@Body() body: { cart: { productId: number, quantity: number }[] }): Promise<number | null> {
     return this.productsService.getTotalFinalPrice(body.cart);
   }
   

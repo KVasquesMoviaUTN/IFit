@@ -1,10 +1,10 @@
 import { IsEmail, MinLength } from 'class-validator';
 
 export class CreateUserDto {
-  name: string;
+	name: string;
 	phone: string;
+	address: any;
 	surname: string;
-	address: string;
 
 	@IsEmail()
 	mail: string;

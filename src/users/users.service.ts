@@ -48,8 +48,11 @@ export class UsersService {
     }
 
     await this.usersRepository.update(id, updateUserDto);
-  
-    return this.usersRepository.findOne({ where: { id } });
+
+    return this.usersRepository.findOne({ 
+      where: { id } ,
+      select: ['id', 'name', 'surname', 'address', 'phone'],
+    });
   }
 
   async delete(id: number): Promise<void> {

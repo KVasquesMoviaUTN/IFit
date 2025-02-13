@@ -59,12 +59,17 @@ export class ProductsService {
     return this.calculateDiscount(price, quantity);
   }
 
-  async getTotalPrice(cart: { price: number, quantity: number }[]): Promise<number | null> {
+  async getTotalPrice(cart: { productId: number, quantity: number }[]): Promise<number | null> {
     let totalPrice = 0;
 
-    cart.forEach(product => {
-      totalPrice += product.price * product.quantity;
-    });
+    for (const product of cart) {
+      const productSafe = await this.findOne(product.productId);
+  
+      if (!productSafe)
+        throw new Error(`Producto con ID ${product.productId} no encontrado`);
+  
+      totalPrice += Math.round(productSafe.price * product.quantity);
+    }
 
     return Math.round(totalPrice);
   }
@@ -81,7 +86,7 @@ export class ProductsService {
       totalPrice += this.calculateDiscount(productSafe.price, product.quantity);
     }
   
-    return totalPrice;
+    return Math.round(totalPrice);
   }
   
   private calculateDiscount(price: number, quantity: number): number {

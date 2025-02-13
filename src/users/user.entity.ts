@@ -12,8 +12,8 @@ export class Users {
   @Column()
   surname: string;
 
-  @Column()
-  address: string;
+  @Column({ type: 'jsonb' })
+  address: object;
 
   @Column({ unique: true })
   mail: string;

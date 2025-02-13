@@ -65,19 +65,16 @@ export class SalesService {
   }
 
   async getShippingCost(address): Promise<number> {
-      if (address.state == "Autonomous City of Buenos Aires")
-        return 3000;
+    if (address.state == 'Autonomous City of Buenos Aires')
+      return 3000;
 
-      return 7000;
+    if (address.state != 'Buenos Aires')
+      return 9999;
+    
+    if (address.state == 'Buenos Aires')
+      return 5000;
 
-      // if (address.state != "Buenos Aires")
-      //   return 7000;
-
-      // if (address.state == "Buenos Aires")
-      //   return 5000;
-
-      //   if (address.state_district == "Buenos Aires")
-      //   return 5000
+    return 9999;
   }
 
   async findOne(id: number): Promise<Sale | null> {
