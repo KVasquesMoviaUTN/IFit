@@ -66,7 +66,7 @@ export class SalesService {
 
   async getShippingCost(address): Promise<number> {
       if (address.state == "Autonomous City of Buenos Aires")
-        return 4000;
+        return 3000;
 
       return 7000;
 

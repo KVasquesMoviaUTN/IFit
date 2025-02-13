@@ -12,25 +12,23 @@ async function bootstrap() {
     ? ['https://modofit-five.vercel.app']
     : ['http://localhost:8080'];
 
-  app.enableCors({ origin: process.env.DATABASE_URL });
+  app.enableCors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
 
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
     whitelist: false,
     forbidNonWhitelisted: true,
   }));
-    
-    app.enableCors({
-      origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error('Not allowed by CORS'));
-        }
-      },
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      credentials: true,
-    });
 
   await app.listen(3000);
 }
