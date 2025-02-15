@@ -93,6 +93,6 @@ export class ProductsService {
   }
   
   private calculateDiscount(price: number, quantity: number): number {
-    return Math.round((quantity > 9) ? price * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : price * quantity);
+    return Math.round((quantity > 4) ? price * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : price * quantity);
   }
 }
