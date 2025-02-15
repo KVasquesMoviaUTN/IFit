@@ -9,7 +9,7 @@ async function bootstrap() {
   const isProduction = process.env.NODE_ENV === 'production';
 
   const allowedOrigins = isProduction
-    ? ['https://modofit-five.vercel.app']
+    ? ['https://modofit.shop/']
     : ['http://localhost:8080'];
 
   app.enableCors({
