@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CartModule } from './cart/cart.module'; 
+// import { CartModule } from './cart/cart.module'; 
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { databaseConfig } from './config/database.config';
 import { ProductsModule } from './products/products.module';
 import { ConfigController } from './config/config.controller';
 import { MercadoPagoModule } from './payments/mercado-pago.module';
+import { SalesModule } from './sales/sales.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { MercadoPagoModule } from './payments/mercado-pago.module';
     MercadoPagoModule,
     ProductsModule,
     UsersModule,
-    CartModule,
+    // CartModule,
+    SalesModule,
     AuthModule,
   ],
   controllers: [ConfigController],
