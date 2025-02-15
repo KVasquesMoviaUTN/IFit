@@ -18,7 +18,10 @@ export class ProductsService {
   }
 
   async findAll(): Promise<Product[]> {
-    return this.productsRepository.find({ relations: ['presentation'], });
+    return this.productsRepository.find({
+      relations: ['presentation'],
+      order: { display_order: 'DESC' },
+    });
   }
 
   async findOne(id: number): Promise<Product | null> {
@@ -90,6 +93,6 @@ export class ProductsService {
   }
   
   private calculateDiscount(price: number, quantity: number): number {
-    return Math.round((quantity > 9) ? price * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : price * quantity);
+    return Math.round((quantity > 4) ? price * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : price * quantity);
   }
 }

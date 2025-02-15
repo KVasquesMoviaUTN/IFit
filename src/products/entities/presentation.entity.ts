@@ -15,6 +15,9 @@ export class Presentation {
   price: number;
 
   @Column()
+  flavour: string;
+
+  @Column()
   description: string;
 
   @Column()

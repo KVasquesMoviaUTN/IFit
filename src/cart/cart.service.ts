@@ -1,59 +1,59 @@
-import { Injectable } from '@nestjs/common';
-import { AddCartDto } from './dto/add-cart.dto';
-import { ProductsService } from 'src/products/products.service';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+// import { Injectable } from '@nestjs/common';
+// import { AddCartDto } from './dto/add-cart.dto';
+// import { ProductsService } from 'src/products/products.service';
+// import { InjectRepository } from '@nestjs/typeorm';
+// import { Repository } from 'typeorm';
 
-export interface CartItem {
-  productId: number;
-  quantity: number;
-}
+// export interface CartItem {
+//   productId: number;
+//   quantity: number;
+// }
 
-@Injectable()
-export class CartService {
-  constructor(
-    private readonly productsService: ProductsService,
+// @Injectable()
+// export class CartService {
+//   constructor(
+//     private readonly productsService: ProductsService,
 
-    // @InjectRepository(Product)
-    // private productsRepository: Repository<CartItem>,
-  ) {}
+//     // @InjectRepository(Product)
+//     // private productsRepository: Repository<CartItem>,
+//   ) {}
 
-  private cart: CartItem[] = [];
+//   private cart: CartItem[] = [];
 
-  async addToCart(addCartDto: AddCartDto): Promise<void> {
-    const existingItem = this.cart.find(item => item.productId === addCartDto.productId);
+//   async addToCart(addCartDto: AddCartDto): Promise<void> {
+//     const existingItem = this.cart.find(item => item.productId === addCartDto.productId);
 
-    if (existingItem) {
-      existingItem.quantity += addCartDto.quantity;
-    } else {
-      this.cart.push({ productId: addCartDto.productId, quantity: addCartDto.quantity });
-    }
-  }
+//     if (existingItem) {
+//       existingItem.quantity += addCartDto.quantity;
+//     } else {
+//       this.cart.push({ productId: addCartDto.productId, quantity: addCartDto.quantity });
+//     }
+//   }
 
-  async updateCartItem(productId: string, quantity: number) {
-    const itemIndex = this.cart.findIndex(item => item.productId === parseInt(productId));
+//   async updateCartItem(productId: string, quantity: number) {
+//     const itemIndex = this.cart.findIndex(item => item.productId === parseInt(productId));
 
-    if (itemIndex !== -1) {
-      this.cart[itemIndex].quantity = quantity;
+//     if (itemIndex !== -1) {
+//       this.cart[itemIndex].quantity = quantity;
 
-      return this.cart[itemIndex];
-    }
-    return null;
-  }
+//       return this.cart[itemIndex];
+//     }
+//     return null;
+//   }
 
-  getCart(): Promise<CartItem[]> {
-    return Promise.resolve(this.cart);
-  }
+//   getCart(): Promise<CartItem[]> {
+//     return Promise.resolve(this.cart);
+//   }
 
-  removeFromCart(productId: number): Promise<void> {
-    this.cart = this.cart.filter(item => item.productId !== productId);
-    return Promise.resolve();
-  }
+//   removeFromCart(productId: number): Promise<void> {
+//     this.cart = this.cart.filter(item => item.productId !== productId);
+//     return Promise.resolve();
+//   }
 
-  // async findAll(): Promise<CartItem[]> {
-  //   return this.productsRepository.find({ relations: ['presentation'], });
-  // }
+//   // async findAll(): Promise<CartItem[]> {
+//   //   return this.productsRepository.find({ relations: ['presentation'], });
+//   // }
 
 
   
-}
+// }
