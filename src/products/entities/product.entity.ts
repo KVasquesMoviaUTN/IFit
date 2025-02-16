@@ -38,9 +38,12 @@ export class Product {
   @Column()
   display_order: number; 
   
-  @ManyToOne(() => Category, (category) => category.products, { nullable: true })
-  @JoinColumn({ name: 'category' })
-  category: Category;
+  // @ManyToOne(() => Category, (category) => category.products, { nullable: true })
+  // @JoinColumn({ name: 'category' })
+  // category: Category;
+
+  @Column()
+  category: string;
 
   @OneToMany(() => SaleDetail, (saleDetail) => saleDetail.product)
   saleDetail: SaleDetail[]
