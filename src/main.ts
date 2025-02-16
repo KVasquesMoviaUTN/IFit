@@ -2,9 +2,12 @@ import { AppModule } from './app.module';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import type { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+  app.useStaticAssets(join(__dirname, '..', 'public'));
 
   const isProduction = process.env.NODE_ENV === 'production';
 
