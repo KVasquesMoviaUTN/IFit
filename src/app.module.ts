@@ -12,7 +12,6 @@ import { SalesModule } from './sales/sales.module';
 import { Product } from './products/entities/product.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { RobotsController } from './robots.controller';
 import { SitemapModule } from './sitemap/sitemap.module';
 
 @Module({
@@ -33,6 +32,6 @@ import { SitemapModule } from './sitemap/sitemap.module';
     AuthModule,
     TypeOrmModule.forFeature([Product]),
   ],
-  controllers: [ConfigController, RobotsController],
+  controllers: [ConfigController],
 })
 export class AppModule {}
