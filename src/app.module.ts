@@ -9,11 +9,11 @@ import { ProductsModule } from './products/products.module';
 import { ConfigController } from './config/config.controller';
 import { MercadoPagoModule } from './payments/mercado-pago.module';
 import { SalesModule } from './sales/sales.module';
-import { SitemapController } from './sitemap/sitemap.controller';
 import { Product } from './products/entities/product.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { RobotsController } from './robots.controller';
+import { SitemapModule } from './sitemap/sitemap.module';
 
 @Module({
   imports: [
@@ -24,6 +24,7 @@ import { RobotsController } from './robots.controller';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot(databaseConfig),
+    SitemapModule,
     MercadoPagoModule,
     ProductsModule,
     UsersModule,
@@ -32,6 +33,6 @@ import { RobotsController } from './robots.controller';
     AuthModule,
     TypeOrmModule.forFeature([Product]),
   ],
-  controllers: [ConfigController, SitemapController, RobotsController],
+  controllers: [ConfigController, RobotsController],
 })
 export class AppModule {}
