@@ -1,5 +1,7 @@
-import { Controller, Get, Header } from '@nestjs/common';
+import { Controller, Get, Header, Res } from '@nestjs/common';
 import { SitemapService } from './sitemap.service';
+import { join } from 'path';
+import { Response } from 'express';
 
 @Controller('sitemap.xml')
 export class SitemapController {
@@ -11,6 +13,10 @@ export class SitemapController {
 	async getSitemap() {
 		const isProduction = process.env.NODE_ENV === 'production';
 		const baseUrl = isProduction ? 'https://modofit.shop' : 'http://localhost:8080';
+
+    const filePath = join(__dirname, '..', 'dist', 'public', 'sitemap.xml');
+    res.header('Content-Type', 'application/xml');
+    res.sendFile(filePath); // Envía el archivo sitemap.xml
     
     const routes = [	
       { url: '/', priority: 1.0 },
