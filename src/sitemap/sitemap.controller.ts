@@ -15,8 +15,8 @@ export class SitemapController {
 		const baseUrl = isProduction ? 'https://modofit.shop' : 'http://localhost:8080';
 
     const filePath = join(__dirname, '..', 'dist', 'public', 'sitemap.xml');
-    res.header('Content-Type', 'application/xml');
-    res.sendFile(filePath); // Envía el archivo sitemap.xml
+    // res.header('Content-Type', 'application/xml');
+    // res.sendFile(filePath); // Envía el archivo sitemap.xml
     
     const routes = [	
       { url: '/', priority: 1.0 },
