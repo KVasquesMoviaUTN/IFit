@@ -59,7 +59,7 @@ export class ProductsService {
       price = product.price;
     }
 
-    return this.calculateDiscount(price, quantity);
+    return Math.round(this.calculateDiscount(price, quantity));
   }
 
   async getTotalPrice(cart: { productId: number, quantity: number }[]): Promise<number | null> {
