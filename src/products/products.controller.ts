@@ -24,8 +24,8 @@ export class ProductsController {
   }
 
   @Get('/price/:id')
-  getPrice(@Param('id') id: number, @Query('quantity') quantity: number): Promise<number | null> {
-    return this.productsService.getPrice(id, quantity);
+  getPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
+    return this.productsService.getPrice(id, quantity, presentationId);
   }
 
   @Post('/total')

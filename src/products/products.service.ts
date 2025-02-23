@@ -38,6 +38,8 @@ export class ProductsService {
   }
 
   async getPrice(id: number, quantity: number, presentationId?: number): Promise<number> {
+    let price: number;
+
     const product = await this.productsRepository.findOne({
       where: { id },
       relations: ['presentation']
@@ -46,11 +48,9 @@ export class ProductsService {
     if (!product) 
       throw new Error(`Product with id ${id} not found`);
 
-    let price: number;
-
     if (presentationId) {
       const presentation = product.presentation.find(p => p.id === presentationId);
-      
+
       if (!presentation) 
         throw new Error(`Presentation with id ${presentationId} not found for product ${id}`);
   
