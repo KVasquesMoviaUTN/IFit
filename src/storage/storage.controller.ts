@@ -7,7 +7,6 @@ export class StorageController {
 
   @Get('from-directory')
   async uploadFromDirectory(@Query('path') directoryPath: string) {
-		console.log('Ruta recibida en el backend:', directoryPath);
     if (!directoryPath) {
       throw new BadRequestException('Debe proporcionar una ruta válida');
     }
