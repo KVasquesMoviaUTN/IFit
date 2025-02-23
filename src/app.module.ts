@@ -12,7 +12,6 @@ import { SalesModule } from './sales/sales.module';
 import { Product } from './products/entities/product.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { SitemapModule } from './sitemap/sitemap.module';
 import { StorageModule } from './storage/storage.module';
 
 @Module({
@@ -24,7 +23,6 @@ import { StorageModule } from './storage/storage.module';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot(databaseConfig),
-    SitemapModule,
     MercadoPagoModule,
     ProductsModule,
     UsersModule,

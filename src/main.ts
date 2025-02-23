@@ -7,9 +7,6 @@ import { join } from 'path';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // app.useStaticAssets(join(__dirname, '..', 'public'), { prefix: '/assets' });
-  // app.useStaticAssets(join(__dirname, '..', 'dist/public'), { prefix: '/assets' });
-
   const isProduction = process.env.NODE_ENV === 'production';
 
   const allowedOrigins = isProduction
