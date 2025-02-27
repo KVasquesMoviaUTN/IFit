@@ -13,10 +13,19 @@ export class ProductsController {
     return this.productsService.create(createProductDto);
   }
 
+  // @Get()
+  // findAll(): Promise<Product[]> {
+  //   return this.productsService.findAll();
+  // }
+
   @Get()
-  findAll(): Promise<Product[]> {
-    return this.productsService.findAll();
+  async findAll(
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 10
+  ): Promise<{ data: Product[]; total: number; page: number; lastPage: number }> {
+    return this.productsService.findAll(+page, +limit);
   }
+
 
   @Get(':id')
   findOne(@Param('id') id: number): Promise<Product | null> {

@@ -17,13 +17,33 @@ export class ProductsService {
     return this.productsRepository.save(product);
   }
 
-  async findAll(): Promise<Product[]> {
-    return this.productsRepository.find({
+  // async findAll(): Promise<Product[]> {
+  //   return this.productsRepository.find({
+  //     relations: ['presentation'],
+  //     order: { display_order: 'DESC' },
+  //   });
+  // }
+
+  async findAll(page: number = 1, limit: number = 10): Promise<{ data: Product[]; total: number; page: number; lastPage: number }> {
+    const take = limit;
+    const skip = (page - 1) * limit;
+  
+    const [data, total] = await this.productsRepository.findAndCount({
       relations: ['presentation'],
       order: { display_order: 'DESC' },
+      take,
+      skip,
     });
+  
+    return {
+      data,
+      total,
+      page,
+      lastPage: Math.ceil(total / limit),
+    };
   }
 
+  
   async findOne(id: number): Promise<Product | null> {
     return this.productsRepository.findOne({ where: { id } });
   }
