@@ -14,8 +14,8 @@ export class ProductsController {
   }
 
   @Get()
-  findAll(): Promise<Product[]> {
-    return this.productsService.findAll();
+  async getProducts(@Query('page') page: number, @Query('pageSize') pageSize: number) {
+    return this.productsService.findAll(page, pageSize);
   }
 
   @Get(':id')

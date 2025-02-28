@@ -17,11 +17,22 @@ export class ProductsService {
     return this.productsRepository.save(product);
   }
 
-  async findAll(): Promise<Product[]> {
-    return this.productsRepository.find({
+  async findAll(page: number, pageSize: number = 30): Promise<{ products: Product[], totalPages: number, hasNextPage: boolean }> {
+    const [products, total] = await this.productsRepository.findAndCount({
       relations: ['presentation'],
       order: { display_order: 'DESC' },
+      skip: (page - 1) * pageSize,
+      take: pageSize,
     });
+  
+    const totalPages = Math.ceil(total / pageSize);
+    const hasNextPage = page < totalPages;
+  
+    return {
+      products,
+      totalPages,
+      hasNextPage,
+    };
   }
 
   async findOne(id: number): Promise<Product | null> {
