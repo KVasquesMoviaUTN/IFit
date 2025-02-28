@@ -17,7 +17,7 @@ export class ProductsService {
     return this.productsRepository.save(product);
   }
 
-  async findAll(page: number, pageSize: number = 20): Promise<{ products: Product[], totalPages: number, hasNextPage: boolean }> {
+  async findAll(page: number, pageSize: number = 10): Promise<{ products: Product[], totalPages: number, hasNextPage: boolean }> {
     const [products, total] = await this.productsRepository.findAndCount({
       relations: ['presentation'],
       order: { display_order: 'DESC' },
