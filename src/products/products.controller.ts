@@ -23,6 +23,16 @@ export class ProductsController {
     return this.productsService.findOne(id);
   }
 
+  @Get('/original-price/:id')
+  getOriginaPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
+    return this.productsService.getOriginalPrice(id, quantity, presentationId);
+  }
+
+  @Get('/discount-price/:id')
+  getDiscountPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
+    return this.productsService.getDiscountPrice(id, quantity, presentationId);
+  }
+
   @Get('/price/:id')
   getPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
     return this.productsService.getPrice(id, quantity, presentationId);

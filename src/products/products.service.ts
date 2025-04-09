@@ -48,6 +48,56 @@ export class ProductsService {
     await this.productsRepository.delete(id);
   }
 
+  async getOriginalPrice(id: number, quantity: number, presentationId?: number): Promise<number> {
+    let price: number;
+
+    const product = await this.productsRepository.findOne({
+      where: { id },
+      relations: ['presentation']
+    });  
+
+    if (!product) 
+      throw new Error(`Product with id ${id} not found`);
+
+    if (presentationId) {
+      const presentation = product.presentation.find(p => p.id === presentationId);
+
+      if (!presentation) 
+        throw new Error(`Presentation with id ${presentationId} not found for product ${id}`);
+  
+      price = presentation.price;
+    } else {
+      price = product.price;
+    }
+
+    return price;
+  }
+
+  async getDiscountPrice(id: number, quantity: number, presentationId?: number): Promise<number> {
+    let price: number;
+
+    const product = await this.productsRepository.findOne({
+      where: { id },
+      relations: ['presentation']
+    });  
+
+    if (!product) 
+      throw new Error(`Product with id ${id} not found`);
+
+    if (presentationId) {
+      const presentation = product.presentation.find(p => p.id === presentationId);
+
+      if (!presentation) 
+        throw new Error(`Presentation with id ${presentationId} not found for product ${id}`);
+  
+      price = presentation.price;
+    } else {
+      price = product.price;
+    }
+
+    return Math.round(price * (1 - product.discount/100));
+  }
+
   async getPrice(id: number, quantity: number, presentationId?: number): Promise<number> {
     let price: number;
 
@@ -70,7 +120,7 @@ export class ProductsService {
       price = product.price;
     }
 
-    return Math.round(this.calculateDiscount(price, quantity));
+    return Math.round(this.calculateDiscount(product, price, quantity));
   }
 
   async getTotalPrice(cart: { productId: number, quantity: number }[]): Promise<number | null> {
@@ -97,13 +147,14 @@ export class ProductsService {
       if (!productSafe)
         throw new Error(`Producto con ID ${product.productId} no encontrado`);
   
-      totalPrice += this.calculateDiscount(productSafe.price, product.quantity);
+      totalPrice += this.calculateDiscount(productSafe, productSafe.price, product.quantity);
     }
   
     return Math.round(totalPrice);
   }
   
-  private calculateDiscount(price: number, quantity: number): number {
-    return Math.round((quantity > 4) ? price * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : price * quantity);
+  private calculateDiscount(product: Product, price: number, quantity: number): number {
+    let discountPrice = Math.round(price * (1 - product.discount/100));
+    return Math.round((quantity > 4) ? discountPrice * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : discountPrice * quantity);
   }
 }

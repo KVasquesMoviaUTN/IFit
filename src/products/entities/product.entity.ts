@@ -36,7 +36,10 @@ export class Product {
   informacion_nutricional: string; 
 
   @Column()
-  display_order: number; 
+  display_order: number;
+  
+  @Column()
+  discount: number; 
   
   // @ManyToOne(() => Category, (category) => category.products, { nullable: true })
   // @JoinColumn({ name: 'category' })
