@@ -33,6 +33,9 @@ export class Product {
   unidad: string; 
 
   @Column()
+  highlight: string; 
+
+  @Column()
   informacion_nutricional: string; 
 
   @Column()

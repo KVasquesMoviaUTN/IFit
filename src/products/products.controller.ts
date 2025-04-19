@@ -18,6 +18,11 @@ export class ProductsController {
     return this.productsService.findAll(page, pageSize);
   }
 
+  @Get('/new')
+  async getNewProducts() {
+    return this.productsService.findNew();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: number): Promise<Product | null> {
     return this.productsService.findOne(id);

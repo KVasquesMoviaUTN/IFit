@@ -35,6 +35,20 @@ export class ProductsService {
     };
   }
 
+  async findNew(): Promise<{ products: Product[] }> {
+    const [products, total] = await this.productsRepository.findAndCount({
+      where: {
+        highlight: 'Nuevo',
+      },
+      relations: ['presentation'],
+      order: { display_order: 'DESC' },
+    });
+  
+    return {
+      products,
+    };
+  }
+
   async findOne(id: number): Promise<Product | null> {
     return this.productsRepository.findOne({ where: { id } });
   }
