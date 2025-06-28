@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMan
 import { Category } from './category.entity';
 import { SaleDetail } from 'src/sales/entities/sale-detail.entity';
 import { Product } from './product.entity';
+import { ProductImage } from './product-image.entity';
 
 @Entity()
 export class Presentation {
@@ -35,4 +36,7 @@ export class Presentation {
 	@ManyToOne(() => Product, (product) => product.presentation, { nullable: true })
   @JoinColumn({ name: 'product' })
   product: Product;
+
+    @OneToMany(() => ProductImage, (productImage) => productImage.presentation)
+  images: ProductImage[];
 }

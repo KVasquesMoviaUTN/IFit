@@ -3,6 +3,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProductsService } from './products.service';
 import { Product } from './entities/product.entity';
+import { ProductImage } from './entities/product-image.entity';
 
 @Controller('products')
 export class ProductsController {
@@ -24,8 +25,26 @@ export class ProductsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number): Promise<Product | null> {
-    return this.productsService.findOne(id);
+  findOne(@Param('id') id: string): Promise<Product | null> {
+    const numericId = parseInt(id, 10);
+    return this.productsService.findOne(numericId);
+  }
+
+  // @Get(':id/images')
+  // getProductImages(@Param('id') id: string): Promise<ProductImage[]> {
+  //   const numericId = parseInt(id, 10);
+  //   return this.productsService.findImagesByProductId(numericId);
+  // }
+
+  @Get(':productId/images')
+  async findImages(
+    @Param('productId') productId: number,
+    @Query('presentationId') presentationId?: number,
+  ): Promise<ProductImage[]> {
+    if (presentationId) {
+      return this.productsService.findImages(productId, Number(presentationId));
+    }
+    return this.productsService.findImages(productId);
   }
 
   @Get('/original-price/:id')

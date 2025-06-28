@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMan
 import { Category } from './category.entity';
 import { SaleDetail } from 'src/sales/entities/sale-detail.entity';
 import { Presentation } from './presentation.entity';
+import { ProductImage } from './product-image.entity';
 
 @Entity('products')
 export class Product {
@@ -21,7 +22,7 @@ export class Product {
   display: boolean;
 
   @Column({nullable: true})
-  image: string;
+  image: string;//TODO eliminar
 
   @Column('decimal')
   stock: number;
@@ -44,10 +45,6 @@ export class Product {
   @Column()
   discount: number; 
   
-  // @ManyToOne(() => Category, (category) => category.products, { nullable: true })
-  // @JoinColumn({ name: 'category' })
-  // category: Category;
-
   @Column()
   category: string;
 
@@ -56,4 +53,7 @@ export class Product {
 
   @OneToMany(() => Presentation, (presentation) => presentation.product)
   presentation: Presentation[]
+
+  @OneToMany(() => ProductImage, (image) => image.product)
+  images: ProductImage[];
 }
