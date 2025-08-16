@@ -24,6 +24,11 @@ export class ProductsController {
     return this.productsService.findNew();
   }
 
+  @Get('/highlighted')
+  async getHighlightedProducts() {
+    return this.productsService.findHighlighted();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Product | null> {
     const numericId = parseInt(id, 10);
