@@ -1,11 +1,11 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, Query } from '@nestjs/common';
-import { UpdateProductDto } from './dto/update-product.dto';
-import { CreateProductDto } from './dto/create-product.dto';
-import { ProductsService } from './products.service';
-import { Product } from './entities/product.entity';
-import { ProductImage } from './entities/product-image.entity';
+import { Controller, Get, Post, Body, Param, Put, Delete, Query } from "@nestjs/common";
+import { UpdateProductDto } from "./dto/update-product.dto";
+import { CreateProductDto } from "./dto/create-product.dto";
+import { ProductsService } from "./products.service";
+import { Product } from "./entities/product.entity";
+import { ProductImage } from "./entities/product-image.entity";
 
-@Controller('products')
+@Controller("products")
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
@@ -15,22 +15,27 @@ export class ProductsController {
   }
 
   @Get()
-  async getProducts(@Query('page') page: number, @Query('pageSize') pageSize: number) {
+  async getProducts(@Query("page") page: number, @Query("pageSize") pageSize: number) {
     return this.productsService.findAll(page, pageSize);
   }
 
-  @Get('/new')
+  @Get("/new")
   async getNewProducts() {
     return this.productsService.findNew();
   }
 
-  @Get('/highlighted')
+  @Get("/highlighted")
   async getHighlightedProducts() {
     return this.productsService.findHighlighted();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string): Promise<Product | null> {
+  @Get("/discounted")
+  async getDiscountedProducts() {
+    return this.productsService.findDiscounted();
+  }
+
+  @Get(":id")
+  findOne(@Param("id") id: string): Promise<Product | null> {
     const numericId = parseInt(id, 10);
     return this.productsService.findOne(numericId);
   }
@@ -41,53 +46,54 @@ export class ProductsController {
   //   return this.productsService.findImagesByProductId(numericId);
   // }
 
-  @Get(':productId/images')
-  async findImages(
-    @Param('productId') productId: number,
-    @Query('presentationId') presentationId?: number,
-  ): Promise<ProductImage[]> {
+  @Get(":productId/images")
+  async findImages(@Param("productId") productId: number, @Query("presentationId") presentationId?: number): Promise<ProductImage[]> {
     if (presentationId) {
       return this.productsService.findImages(productId, Number(presentationId));
     }
     return this.productsService.findImages(productId);
   }
 
-  @Get('/original-price/:id')
-  getOriginaPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
+  @Get("/original-price/:id")
+  getOriginaPrice(
+    @Param("id") id: number,
+    @Query("quantity") quantity: number,
+    @Query("presentationId") presentationId?: number
+  ): Promise<number | null> {
     return this.productsService.getOriginalPrice(id, quantity, presentationId);
   }
 
-  @Get('/discount-price/:id')
-  getDiscountPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
+  @Get("/discount-price/:id")
+  getDiscountPrice(
+    @Param("id") id: number,
+    @Query("quantity") quantity: number,
+    @Query("presentationId") presentationId?: number
+  ): Promise<number | null> {
     return this.productsService.getDiscountPrice(id, quantity, presentationId);
   }
 
-  @Get('/price/:id')
-  getPrice(@Param('id') id: number, @Query('quantity') quantity: number, @Query('presentationId') presentationId?: number): Promise<number | null> {
+  @Get("/price/:id")
+  getPrice(@Param("id") id: number, @Query("quantity") quantity: number, @Query("presentationId") presentationId?: number): Promise<number | null> {
     return this.productsService.getPrice(id, quantity, presentationId);
   }
 
-  @Post('/total')
-  getTotalPrice(@Body() body: { cart: { productId: number, quantity: number }[] }): Promise<number | null> {
+  @Post("/total")
+  getTotalPrice(@Body() body: { cart: { productId: number; quantity: number }[] }): Promise<number | null> {
     return this.productsService.getTotalPrice(body.cart);
   }
 
-  @Post('/finalTotal')
-  getTotalFinalPrice(@Body() body: { cart: { productId: number, quantity: number }[] }): Promise<number | null> {
+  @Post("/finalTotal")
+  getTotalFinalPrice(@Body() body: { cart: { productId: number; quantity: number }[] }): Promise<number | null> {
     return this.productsService.getTotalFinalPrice(body.cart);
   }
-  
 
-  @Put(':id')
-  update(
-    @Param('id') id: number,
-    @Body() updateProductDto: UpdateProductDto,
-  ): Promise<Product | null> {
+  @Put(":id")
+  update(@Param("id") id: number, @Body() updateProductDto: UpdateProductDto): Promise<Product | null> {
     return this.productsService.update(id, updateProductDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: number): Promise<void> {
+  @Delete(":id")
+  remove(@Param("id") id: number): Promise<void> {
     return this.productsService.delete(id);
   }
 }

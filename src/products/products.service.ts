@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
+import { Repository, MoreThan } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
 import { Product } from "./entities/product.entity";
 import { CreateProductDto } from "./dto/create-product.dto";
 import { UpdateProductDto } from "./dto/update-product.dto";
@@ -40,7 +40,7 @@ export class ProductsService {
   }
 
   async findNew(): Promise<{ products: Product[] }> {
-    const [products, total] = await this.productsRepository.findAndCount({
+    const [products] = await this.productsRepository.findAndCount({
       where: {
         highlight: "Nuevo",
       },
@@ -54,9 +54,23 @@ export class ProductsService {
   }
 
   async findHighlighted(): Promise<{ products: Product[] }> {
-    const [products, total] = await this.productsRepository.findAndCount({
+    const [products] = await this.productsRepository.findAndCount({
       where: {
         highlight: "Destacado",
+      },
+      relations: ["presentation"],
+      order: { display_order: "DESC" },
+    });
+
+    return {
+      products,
+    };
+  }
+
+  async findDiscounted(): Promise<{ products: Product[] }> {
+    const [products] = await this.productsRepository.findAndCount({
+      where: {
+        discount: MoreThan(0),
       },
       relations: ["presentation"],
       order: { display_order: "DESC" },
@@ -80,18 +94,17 @@ export class ProductsService {
     });
   }
 
-async findImages(productId: number, presentationId?: number): Promise<ProductImage[]> {
-  if (presentationId) {
-    return this.productImageRepository.find({
-      where: { presentation: { id: presentationId } },
-    });
-  } else {
-    return this.productImageRepository.find({
-      where: { product: { id: productId } },
-    });
+  async findImages(productId: number, presentationId?: number): Promise<ProductImage[]> {
+    if (presentationId) {
+      return this.productImageRepository.find({
+        where: { presentation: { id: presentationId } },
+      });
+    } else {
+      return this.productImageRepository.find({
+        where: { product: { id: productId } },
+      });
+    }
   }
-}
-
 
   async update(id: number, updateProductDto: UpdateProductDto): Promise<Product | null> {
     await this.productsRepository.update(id, updateProductDto);
