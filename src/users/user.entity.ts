@@ -21,8 +21,11 @@ export class Users {
   @Column()
   phone: string;
 
-	@Column()
+  @Column()
   password: string;
+
+  @Column({ default: 'user' })
+  role: string;
 
   @CreateDateColumn({ type: 'timestamp' })
   createdAt: Date;

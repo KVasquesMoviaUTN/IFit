@@ -23,7 +23,7 @@ export class AuthService {
 
     if (!user || !(await bcrypt.compare(password, user.password))) return null;
 
-    const { id, name, surname, address, phone } = user;
+    const { id, name, surname, address, phone, role } = user;
 
     return { message: 'Inicio de sesión exitoso',     
       user: {
@@ -32,6 +32,7 @@ export class AuthService {
         phone,
         address,
         surname,
+        role,
       }, 
     };
   }

@@ -1,18 +1,21 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
 // import { CartModule } from './cart/cart.module'; 
 import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
-import { databaseConfig } from './config/database.config';
-import { ProductsModule } from './products/products.module';
 import { ConfigController } from './config/config.controller';
-import { MercadoPagoModule } from './payments/mercado-pago.module';
-import { SalesModule } from './sales/sales.module';
-import { Product } from './products/entities/product.entity';
-import { ServeStaticModule } from '@nestjs/serve-static';
+import { ConfigModule } from '@nestjs/config';
+import { databaseConfig } from './config/database.config';
 import { join } from 'path';
+import { MercadoPagoModule } from './payments/mercado-pago.module';
+import { Module } from '@nestjs/common';
+import { Product } from './products/entities/product.entity';
+import { ProductsModule } from './products/products.module';
+import { SalesModule } from './sales/sales.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
 import { StorageModule } from './storage/storage.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './users/users.module';
+import { WinstonModule, utilities as nestWinstonModuleUtilities } from 'nest-winston';
+import DailyRotateFile from 'winston-daily-rotate-file';
+import * as winston from 'winston';
 
 @Module({
   imports: [
@@ -22,11 +25,36 @@ import { StorageModule } from './storage/storage.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    WinstonModule.forRoot({
+      transports: [
+        new winston.transports.Console({
+          format: winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.ms(),
+            nestWinstonModuleUtilities.format.nestLike('ModoFit', {
+              colors: true,
+              prettyPrint: true,
+            }),
+          ),
+        }),
+        new DailyRotateFile({
+          dirname: 'logs',
+          filename: 'application-%DATE%.log',
+          datePattern: 'YYYY-MM-DD',
+          zippedArchive: true,
+          maxSize: '20m',
+          maxFiles: '14d',
+          format: winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.json(),
+          ),
+        }),
+      ],
+    }),
     TypeOrmModule.forRoot(databaseConfig),
     MercadoPagoModule,
     ProductsModule,
     UsersModule,
-    // CartModule,
     StorageModule,
     SalesModule,
     AuthModule,
