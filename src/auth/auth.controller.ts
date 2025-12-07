@@ -15,6 +15,10 @@ export class AuthController {
       return { message: 'Credenciales incorrectas' };
     }
 
-    return { message: 'Inicio de sesión exitoso', user };
+    return { 
+      message: 'Inicio de sesión exitoso', 
+      user,
+      token: 'fake-jwt-token-' + Date.now()
+    };
   }
 }

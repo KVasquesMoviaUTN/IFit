@@ -1,6 +1,7 @@
 export class CreateProductDto {
   name: string;
   price: number;
+  purchase_price?: number;
   image?: string;
   stock?: number;
   unidad?: string;

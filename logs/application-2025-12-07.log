@@ -1,0 +1,2 @@
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=1&pageSize=9","timestamp":"2025-12-07T03:59:13.038Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=1&pageSize=9 - 53ms","timestamp":"2025-12-07T03:59:13.087Z"}

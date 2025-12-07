@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, Query } from "@nestjs/common";
+import { Controller, Get, Post, Body, Param, Put, Delete, Query, DefaultValuePipe, ParseIntPipe } from "@nestjs/common";
 import { UpdateProductDto } from "./dto/update-product.dto";
 import { CreateProductDto } from "./dto/create-product.dto";
 import { ProductsService } from "./products.service";
@@ -15,12 +15,18 @@ export class ProductsController {
   }
 
   @Get()
-  async getProducts(@Query("page") page: number, @Query("pageSize") pageSize: number) {
+  async getProducts(
+    @Query("page", new DefaultValuePipe(1), ParseIntPipe) page: number,
+    @Query("pageSize", new DefaultValuePipe(20), ParseIntPipe) pageSize: number
+  ) {
     return this.productsService.findAll(page, pageSize);
   }
 
   @Get("/new")
-  async getNewProducts() {
+  async getNewProducts(
+    @Query("page", new DefaultValuePipe(1), ParseIntPipe) page: number,
+    @Query("pageSize", new DefaultValuePipe(20), ParseIntPipe) pageSize: number
+  ) {
     return this.productsService.findNew();
   }
 

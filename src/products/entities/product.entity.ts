@@ -9,44 +9,47 @@ export class Product {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  name: string;
+  @Column({ default: '' })
+  name: string = '';
 
-  @Column('decimal', { precision: 10, scale: 2 })
-  price: number;
+  @Column('decimal', { precision: 10, scale: 2, default: 0 })
+  price: number = 0;
 
-  @Column()
-  description: string;
+  @Column('decimal', { precision: 10, scale: 2, default: 0 })
+  purchase_price: number = 0;
 
-  @Column()
-  display: boolean;
+  @Column({ default: '' })
+  description: string = '';
 
-  @Column({nullable: true})
-  image: string;//TODO eliminar
+  @Column({ default: false })
+  display: boolean = false;
 
-  @Column('decimal')
-  stock: number;
+  @Column({ nullable: true, default: '' })
+  image: string = '';
 
-  @Column('decimal')
-  unidad_venta: number;
+  @Column('decimal', { default: 0 })
+  stock: number = 0;
 
-  @Column()
-  unidad: string; 
+  @Column('decimal', { default: 1 })
+  unidad_venta: number = 1;
 
-  @Column()
-  highlight: string; 
+  @Column({ default: 'u' })
+  unidad: string = 'u'; 
 
-  @Column()
-  informacion_nutricional: string; 
+  @Column({ default: '' })
+  highlight: string = ''; 
 
-  @Column()
-  display_order: number;
+  @Column({ default: '' })
+  informacion_nutricional: string = ''; 
+
+  @Column({ default: 0 })
+  display_order: number = 0;
   
-  @Column()
-  discount: number; 
+  @Column({ default: 0 })
+  discount: number = 0; 
   
-  @Column()
-  category: string;
+  @Column({ default: '' })
+  category: string = '';
 
   @OneToMany(() => SaleDetail, (saleDetail) => saleDetail.product)
   saleDetail: SaleDetail[]

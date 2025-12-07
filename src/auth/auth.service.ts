@@ -25,15 +25,13 @@ export class AuthService {
 
     const { id, name, surname, address, phone, role } = user;
 
-    return { message: 'Inicio de sesión exitoso',     
-      user: {
-        id,
-        name,
-        phone,
-        address,
-        surname,
-        role,
-      }, 
+    return {
+      id,
+      name,
+      phone,
+      address,
+      surname,
+      role,
     };
   }
 }
