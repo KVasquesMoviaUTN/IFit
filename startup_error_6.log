@@ -1,0 +1,809 @@
+
+> modofit@1.0.0 start:dev
+> nest start --watch
+
+[2J[3J[H[[90m1:11:05 PM[0m] Starting compilation in watch mode...
+
+To restart at any time, enter rs.
+
+[[90m1:11:06 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:130618) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +22ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +0ms[39m
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:07 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (1)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:10 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (2)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:13 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (3)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:16 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (4)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:19 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (5)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:22 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (6)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:25 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (7)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:28 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (8)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:31 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database. Retrying (9)...[39m
+QueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryRunner.executeQueries (/home/kalil/work/IFit/node_modules/typeorm/query-runner/src/query-runner/BaseQueryRunner.ts:681:13)
+    at async PostgresQueryRunner.addColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9)
+    at async PostgresQueryRunner.changeColumn (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13)
+    at async PostgresQueryRunner.changeColumns (/home/kalil/work/IFit/node_modules/typeorm/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13)
+    at async RdbmsSchemaBuilder.updateExistColumns (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13)
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9)
+    at async RdbmsSchemaBuilder.build (/home/kalil/work/IFit/node_modules/typeorm/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)
+    at async DataSource.synchronize (/home/kalil/work/IFit/node_modules/typeorm/data-source/src/data-source/DataSource.ts:340:9)
+[31m[Nest] 130618  - [39m12/07/2025, 1:11:31 PM [31m  ERROR[39m [38;5;3m[ExceptionHandler] [39mQueryFailedError: column "name" of relation "categories" contains null values
+    at PostgresQueryRunner.query [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:325:19[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at async PostgresQueryRunner.executeQueries [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/query-runner/src/query-runner/BaseQueryRunner.ts:681:13[90m)[39m
+    at async PostgresQueryRunner.addColumn [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9[90m)[39m
+    at async PostgresQueryRunner.changeColumn [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13[90m)[39m
+    at async PostgresQueryRunner.changeColumns [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13[90m)[39m
+    at async RdbmsSchemaBuilder.updateExistColumns [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13[90m)[39m
+    at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9[90m)[39m
+    at async RdbmsSchemaBuilder.build [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13[90m)[39m
+    at async DataSource.synchronize [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/data-source/src/data-source/DataSource.ts:340:9[90m)[39m {
+  query: [32m'ALTER TABLE "categories" ADD "name" character varying NOT NULL'[39m,
+  parameters: [90mundefined[39m,
+  driverError: error: column "name" of relation "categories" contains null values
+      at [90m/home/kalil/work/IFit/[39mnode_modules/[4mpg[24m/lib/client.js:545:17
+  [90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+      at async PostgresQueryRunner.query [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:254:25[90m)[39m
+      at async PostgresQueryRunner.executeQueries [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/query-runner/src/query-runner/BaseQueryRunner.ts:681:13[90m)[39m
+      at async PostgresQueryRunner.addColumn [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:1160:9[90m)[39m
+      at async PostgresQueryRunner.changeColumn [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:1245:13[90m)[39m
+      at async PostgresQueryRunner.changeColumns [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/driver/src/driver/postgres/PostgresQueryRunner.ts:2319:13[90m)[39m
+      at async RdbmsSchemaBuilder.updateExistColumns [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:969:13[90m)[39m
+      at async RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:229:9[90m)[39m
+      at async RdbmsSchemaBuilder.build [90m(/home/kalil/work/IFit/[39mnode_modules/[4mtypeorm[24m/schema-builder/src/schema-builder/RdbmsSchemaBuilder.ts:95:13[90m)[39m {
+    length: [33m148[39m,
+    severity: [32m'ERROR'[39m,
+    code: [32m'23502'[39m,
+    detail: [90mundefined[39m,
+    hint: [90mundefined[39m,
+    position: [90mundefined[39m,
+    internalPosition: [90mundefined[39m,
+    internalQuery: [90mundefined[39m,
+    where: [90mundefined[39m,
+    schema: [32m'public'[39m,
+    table: [32m'categories'[39m,
+    column: [32m'name'[39m,
+    dataType: [90mundefined[39m,
+    constraint: [90mundefined[39m,
+    file: [32m'tablecmds.c'[39m,
+    line: [32m'6279'[39m,
+    routine: [32m'ATRewriteTable'[39m
+  },
+  length: [33m148[39m,
+  severity: [32m'ERROR'[39m,
+  code: [32m'23502'[39m,
+  detail: [90mundefined[39m,
+  hint: [90mundefined[39m,
+  position: [90mundefined[39m,
+  internalPosition: [90mundefined[39m,
+  internalQuery: [90mundefined[39m,
+  where: [90mundefined[39m,
+  schema: [32m'public'[39m,
+  table: [32m'categories'[39m,
+  column: [32m'name'[39m,
+  dataType: [90mundefined[39m,
+  constraint: [90mundefined[39m,
+  file: [32m'tablecmds.c'[39m,
+  line: [32m'6279'[39m,
+  routine: [32m'ATRewriteTable'[39m
+}
+[2J[3J[H[[90m1:26:39 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m1:26:39 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:136244) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +52ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +120ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136244  - [39m12/07/2025, 1:26:41 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+7ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+2ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+2ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+2ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136244[39m 12/7/2025, 1:26:41 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+13ms[39m
+[31m[ModoFit][39m [31m136244[39m 12/7/2025, 1:26:41 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+3ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+[2J[3J[H[[90m1:26:43 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m1:26:43 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:136427) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +40ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +3ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +75ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 136427  - [39m12/07/2025, 1:26:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+4ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m136427[39m 12/7/2025, 1:26:44 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+8ms[39m
+[31m[ModoFit][39m [31m136427[39m 12/7/2025, 1:26:44 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+1ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+[2J[3J[H[[90m1:50:46 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m1:50:46 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:143184) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +30ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +75ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143184  - [39m12/07/2025, 1:50:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+3ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143184[39m 12/7/2025, 1:50:47 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+8ms[39m
+[31m[ModoFit][39m [31m143184[39m 12/7/2025, 1:50:47 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+2ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+[2J[3J[H[[90m1:51:06 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[96msrc/auth/auth.service.ts[0m:[93m18[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Logger'.
+
+[7m18[0m     Logger.log(`User found: ${user ? user.mail : 'not found'}`, 'AuthService');
+[7m  [0m [91m    ~~~~~~[0m
+
+[96msrc/auth/auth.service.ts[0m:[93m21[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Logger'.
+
+[7m21[0m       Logger.log(`Password match: ${isMatch}`, 'AuthService');
+[7m  [0m [91m      ~~~~~~[0m
+
+[[90m1:51:06 PM[0m] Found 2 errors. Watching for file changes.
+
+[2J[3J[H[[90m1:51:07 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m1:51:07 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:143583) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +37ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +85ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 143583  - [39m12/07/2025, 1:51:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+3ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m143583[39m 12/7/2025, 1:51:08 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+11ms[39m
+[31m[ModoFit][39m [31m143583[39m 12/7/2025, 1:51:08 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+2ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+[2J[3J[H[[90m1:52:03 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m1:52:03 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:144333) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +48ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +153ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 144333  - [39m12/07/2025, 1:52:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+4ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m144333[39m 12/7/2025, 1:52:05 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+9ms[39m
+[31m[ModoFit][39m [31m144333[39m 12/7/2025, 1:52:05 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+2ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+[2J[3J[H[[90m1:54:03 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m1:54:04 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:145854) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +45ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:05 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +120ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 145854  - [39m12/07/2025, 1:54:06 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+4ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m145854[39m 12/7/2025, 1:54:06 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+11ms[39m
+[31m[ModoFit][39m [31m145854[39m 12/7/2025, 1:54:06 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+2ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0
+[2J[3J[H[[90m3:03:47 PM[0m] File change detected. Starting incremental compilation...
+
+To restart at any time, enter rs.
+
+[[90m3:03:48 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:163431) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +52ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWinstonModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMercadoPagoModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServeStaticModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mStorageModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +106ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProductsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 163431  - [39m12/07/2025, 3:03:50 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSalesModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mConfigController {/config}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/config, GET} route[39m [33m+5ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mMercadoPagoController {/payment}:[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/payment, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mProductsController {/products}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/new, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/highlighted, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discounted, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:productId/images, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/original-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/discount-price/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/price/:id, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/total, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/finalTotal, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, PUT} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/products/:id, DELETE} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mUsersController {/users}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, GET} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, PUT} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/users/:id, DELETE} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mStorageController {/upload}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/upload/from-directory, GET} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mSalesController {/sales}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/manual, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/sales/shipping, POST} route[39m [33m+1ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RoutesResolver][39m [32mAuthController {/auth}:[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[RouterExplorer][39m [32mMapped {/auth/login, POST} route[39m [33m+0ms[39m
+[32m[ModoFit][39m [32m163431[39m 12/7/2025, 3:03:50 PM [32m    LOG[39m [33m[NestApplication][39m [32mNest application successfully started[39m [33m+12ms[39m
+[31m[ModoFit][39m [31m163431[39m 12/7/2025, 3:03:50 PM [31m  ERROR[39m [33m[NestApplication][39m [31mError: listen EADDRINUSE: address already in use :::3000[39m - { stack: [ [1mnull[22m ] } [33m+4ms[39m
+node:net:1912
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at ExpressAdapter.listen (/home/kalil/work/IFit/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/home/kalil/work/IFit/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async bootstrap (/home/kalil/work/IFit/src/main.ts:47:3) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v23.2.0

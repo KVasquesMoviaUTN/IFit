@@ -13,7 +13,7 @@ async function bootstrap() {
   const isProduction = process.env.NODE_ENV === 'production';
 
   const allowedOrigins = isProduction
-    ? ['https://modofit-five.vercel.app', 'https://modofit.shop', 'https://www.modofit.shop']
+    ? (process.env.CORS_ORIGINS || '').split(',')
     : ['http://localhost:8080'];
 
   app.enableCors({
@@ -37,7 +37,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
-    whitelist: false,
+    whitelist: true,
     forbidNonWhitelisted: true,
   }));
 

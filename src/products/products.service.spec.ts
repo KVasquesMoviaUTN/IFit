@@ -3,6 +3,7 @@ import { ProductsService } from './products.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
 import { ProductImage } from './entities/product-image.entity';
+import { ProductPriceHistory } from './entities/product-price-history.entity';
 import { Repository } from 'typeorm';
 
 describe('ProductsService', () => {
@@ -34,6 +35,12 @@ describe('ProductsService', () => {
         {
           provide: getRepositoryToken(ProductImage),
           useValue: mockProductImageRepository,
+        },
+        {
+          provide: getRepositoryToken(ProductPriceHistory),
+          useValue: {
+            save: jest.fn(),
+          },
         },
       ],
     }).compile();

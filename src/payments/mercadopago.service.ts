@@ -1,13 +1,16 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 import { CreatePreferenceDto } from './create-preference.dto';
 
 @Injectable()
 export class MercadoPagoService {
+  private readonly logger = new Logger(MercadoPagoService.name);
+
   constructor() {
   }
 
   async createPreference(createPreferenceDto: CreatePreferenceDto) {
+    this.logger.log(`Creating MercadoPago preference for price: ${createPreferenceDto.price}`);
     const { id, price } = createPreferenceDto;
     const client = new MercadoPagoConfig({ accessToken: 'APP_USR-458209303047483-012118-683ff81c5f2cd5586c5877cd4fb0df89-2222130369' });
     const preference = new Preference(client);
@@ -29,9 +32,10 @@ export class MercadoPagoService {
           // ]
         }
       })
+      this.logger.log(`Preference created successfully: ${data.id}`);
       return data;
     } catch (error) {
-      // console.error(error);
+      this.logger.error(`Failed to create preference: ${error.message}`, error.stack);
       return null;
     }
 }

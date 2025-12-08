@@ -1,13 +1,36 @@
-import { IsString, IsNumber, IsOptional, IsDecimal, IsInt } from 'class-validator';
+import { IsString, IsNumber, IsOptional, IsDecimal, IsInt, IsArray, ValidateNested } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateSaleDto {
   @IsInt()
-  user: number;
+  @IsOptional()
+  user?: number;
 
-  address;
+  @IsString()
+  @IsOptional()
+  paymentMethodId?: string;
 
-  saleDetails: {
-    productId: number;
-    quantity: number;
-  }[];
+  @IsOptional()
+  address: any;
+
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => SaleDetailDto)
+  saleDetails: SaleDetailDto[];
+  
+  @IsString()
+  @IsOptional()
+  date?: string;
+}
+
+export class SaleDetailDto {
+  @IsInt()
+  productId: number;
+
+  @IsInt()
+  quantity: number;
+
+  @IsInt()
+  @IsOptional()
+  presentationId?: number;
 }

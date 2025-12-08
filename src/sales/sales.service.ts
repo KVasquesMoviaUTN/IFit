@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Sale } from './entities/sale.entity';
@@ -8,9 +8,13 @@ import { ProductsService } from 'src/products/products.service';
 import { Product } from 'src/products/entities/product.entity';
 import { MercadoPagoService } from 'src/payments/mercadopago.service';
 import { isNumber } from 'class-validator';
+import { PaymentMethodEnum } from './enums/payment-method.enum';
+import { SaleStatus } from './enums/sale-status.enum';
 
 @Injectable()
 export class SalesService {
+  private readonly logger = new Logger(SalesService.name);
+
   constructor(
     @InjectRepository(Sale)
     private saleRepository: Repository<Sale>,
@@ -24,6 +28,7 @@ export class SalesService {
   ) {}
 
   async create(createSaleDto: CreateSaleDto)/* : Promise<Sale> */ {
+    this.logger.log(`Creating sale for user: ${createSaleDto.user}`);
     const { saleDetails, ...saleData } = createSaleDto;
 
     const totalPrice = await this.productsService.getTotalFinalPrice(saleDetails);
@@ -33,13 +38,14 @@ export class SalesService {
     const total = totalPrice + shipping;
 
     const sale = this.saleRepository.create({
-      user: { id: saleData.user },
-      paymentMethod: { id: 2 },
-      saleStatus: { id: 1 },
+      user: saleData.user ? { id: saleData.user } : undefined,
+      paymentMethod: PaymentMethodEnum.MERCADO_PAGO,
+      saleStatus: SaleStatus.PENDING,
       total,
     });
 
     const savedSale = await this.saleRepository.save(sale);
+    this.logger.log(`Sale created with ID: ${savedSale.id}`);
     
     const saleDetailEntities = await Promise.all(saleDetails.map(async (detail) => {
       const subtotal = await this.productsService.getPrice(detail.productId, detail.quantity);
@@ -60,24 +66,71 @@ export class SalesService {
     };
 
     const preference = await this.paymentService.createPreference(preferenceDTO);
+    
+    // For automatic sales, we don't decrease stock immediately here, 
+    // it should be done upon payment confirmation (webhook) or if the business logic dictates otherwise.
+    // Assuming for now web sales stock deduction happens elsewhere or is pending implementation.
 
     return preference;
   }
 
-  async getShippingCost(address): Promise<number> {
-    if (address.state == 'Autonomous City of Buenos Aires')
-      return 3000;
+  async createManual(createSaleDto: CreateSaleDto): Promise<Sale> {
+    this.logger.log(`Creating manual sale for user: ${createSaleDto.user}`);
+    const { saleDetails, ...saleData } = createSaleDto;
 
-    if (address.state != 'Buenos Aires')
-      return 9999;
+    const totalPrice = await this.productsService.getTotalFinalPrice(saleDetails);
     
-    if (address.state == 'Buenos Aires')
-      return 5000;
+    // Manual sales typically don't have shipping cost or it's included/calculated differently.
+    // Assuming 0 for manual sales unless specified.
+    const shipping = 0; 
 
-    return 9999;
+    const total = totalPrice + shipping;
+
+    const sale = this.saleRepository.create({
+      user: saleData.user ? { id: saleData.user } : undefined,
+      paymentMethod: saleData.paymentMethodId || PaymentMethodEnum.EFECTIVO,
+      saleStatus: SaleStatus.COMPLETED, // Default to Completed
+      total,
+      shipping,
+      created_at: saleData.date ? new Date(saleData.date) : undefined
+    });
+
+    const savedSale = await this.saleRepository.save(sale);
+    this.logger.log(`Manual sale created with ID: ${savedSale.id}`);
+    
+    const saleDetailEntities = await Promise.all(saleDetails.map(async (detail) => {
+      const subtotal = await this.productsService.getPrice(detail.productId, detail.quantity, detail.presentationId);
+      
+      // Decrease stock for manual sales immediately
+      await this.productsService.decreaseStock(detail.productId, detail.quantity, detail.presentationId);
+
+      return this.saleDetailRepository.create({
+        product: { id: detail.productId } as Product,
+        presentation: detail.presentationId ? { id: detail.presentationId } : undefined,
+        quantity: detail.quantity,
+        sale: savedSale,
+        subtotal,
+      });
+    }));
+    
+    await this.saleDetailRepository.save(saleDetailEntities);
+
+    return savedSale;
+  }
+
+  async getShippingCost(address: { state: string }): Promise<number> {
+    this.logger.log(`Calculating shipping cost for address: ${JSON.stringify(address)}`);
+    
+    const shippingRates: Record<string, number> = {
+      'Autonomous City of Buenos Aires': 3000,
+      'Buenos Aires': 5000,
+    };
+
+    return shippingRates[address.state] || 9999;
   }
 
   async findOne(id: number): Promise<Sale | null> {
+    this.logger.log(`Fetching sale with ID: ${id}`);
     return this.saleRepository.findOne({ where: { id } });
   }
 

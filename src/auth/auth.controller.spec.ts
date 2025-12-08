@@ -9,6 +9,7 @@ describe('AuthController', () => {
   beforeEach(async () => {
     mockAuthService = {
       validateUser: jest.fn(),
+      login: jest.fn(),
     };
 
     const module: TestingModule = await Test.createTestingModule({
@@ -39,21 +40,22 @@ describe('AuthController', () => {
       expect(mockAuthService.validateUser).toHaveBeenCalledWith(body.mail, body.password);
     });
 
-    it('should return success message and user if validation succeeds', async () => {
-      const serviceResponse = {
-        message: 'Inicio de sesión exitoso',
-        user: { id: 1, name: 'Test' }
+    it('should return token and user if validation succeeds', async () => {
+      const user = { id: 1, name: 'Test' };
+      const loginResponse = {
+        user,
+        token: 'mockToken'
       };
-      mockAuthService.validateUser.mockResolvedValue(serviceResponse);
+      
+      mockAuthService.validateUser.mockResolvedValue(user);
+      mockAuthService.login.mockReturnValue(loginResponse);
 
       const body = { mail: 'test@test.com', password: 'correct' };
       const result = await controller.login(body);
 
-      expect(result).toEqual({
-        message: 'Inicio de sesión exitoso',
-        user: serviceResponse,
-      });
+      expect(result).toEqual(loginResponse);
       expect(mockAuthService.validateUser).toHaveBeenCalledWith(body.mail, body.password);
+      expect(mockAuthService.login).toHaveBeenCalledWith(user);
     });
   });
 });

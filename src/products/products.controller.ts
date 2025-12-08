@@ -1,4 +1,7 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, Query, DefaultValuePipe, ParseIntPipe } from "@nestjs/common";
+import { Controller, Get, Post, Body, Param, Put, Delete, Query, DefaultValuePipe, ParseIntPipe, UseGuards, Logger } from "@nestjs/common";
+import { AuthGuard } from '@nestjs/passport';
+import { RolesGuard } from 'src/auth/roles.guard';
+import { Roles } from 'src/auth/roles.decorator';
 import { UpdateProductDto } from "./dto/update-product.dto";
 import { CreateProductDto } from "./dto/create-product.dto";
 import { ProductsService } from "./products.service";
@@ -7,10 +10,15 @@ import { ProductImage } from "./entities/product-image.entity";
 
 @Controller("products")
 export class ProductsController {
+  private readonly logger = new Logger(ProductsController.name);
+
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles('admin')
   create(@Body() createProductDto: CreateProductDto): Promise<Product> {
+    this.logger.log(`Received request to create product: ${createProductDto.name}`);
     return this.productsService.create(createProductDto);
   }
 
@@ -19,6 +27,7 @@ export class ProductsController {
     @Query("page", new DefaultValuePipe(1), ParseIntPipe) page: number,
     @Query("pageSize", new DefaultValuePipe(20), ParseIntPipe) pageSize: number
   ) {
+    this.logger.log(`Received request to get products page ${page}`);
     return this.productsService.findAll(page, pageSize);
   }
 
@@ -27,21 +36,25 @@ export class ProductsController {
     @Query("page", new DefaultValuePipe(1), ParseIntPipe) page: number,
     @Query("pageSize", new DefaultValuePipe(20), ParseIntPipe) pageSize: number
   ) {
+    this.logger.log('Received request to get new products');
     return this.productsService.findNew();
   }
 
   @Get("/highlighted")
   async getHighlightedProducts() {
+    this.logger.log('Received request to get highlighted products');
     return this.productsService.findHighlighted();
   }
 
   @Get("/discounted")
   async getDiscountedProducts() {
+    this.logger.log('Received request to get discounted products');
     return this.productsService.findDiscounted();
   }
 
   @Get(":id")
   findOne(@Param("id") id: string): Promise<Product | null> {
+    this.logger.log(`Received request to find product with ID: ${id}`);
     const numericId = parseInt(id, 10);
     return this.productsService.findOne(numericId);
   }
@@ -54,10 +67,7 @@ export class ProductsController {
 
   @Get(":productId/images")
   async findImages(@Param("productId") productId: number, @Query("presentationId") presentationId?: number): Promise<ProductImage[]> {
-    if (presentationId) {
-      return this.productsService.findImages(productId, Number(presentationId));
-    }
-    return this.productsService.findImages(productId);
+    return this.productsService.findImages(productId, Number(presentationId));
   }
 
   @Get("/original-price/:id")
@@ -94,12 +104,18 @@ export class ProductsController {
   }
 
   @Put(":id")
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles('admin')
   update(@Param("id") id: number, @Body() updateProductDto: UpdateProductDto): Promise<Product | null> {
+    this.logger.log(`Received request to update product with ID: ${id}`);
     return this.productsService.update(id, updateProductDto);
   }
 
   @Delete(":id")
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles('admin')
   remove(@Param("id") id: number): Promise<void> {
+    this.logger.log(`Received request to delete product with ID: ${id}`);
     return this.productsService.delete(id);
   }
 }
