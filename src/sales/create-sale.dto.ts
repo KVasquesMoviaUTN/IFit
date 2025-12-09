@@ -20,6 +20,14 @@ export class CreateSaleDto {
   paymentMethod?: string;
 
   @IsOptional()
+  @IsString()
+  paymentChannel?: string;
+
+  @IsOptional()
+  @IsNumber()
+  shipping?: number;
+
+  @IsOptional()
   @IsObject()
   address?: object;
 
@@ -46,4 +54,8 @@ export class SaleDetailDto {
   @IsNumber()
   @IsOptional()
   discount?: number;
+
+  @IsNumber()
+  @IsOptional()
+  price?: number;
 }

@@ -35,7 +35,7 @@ describe('SalesController', () => {
 
   describe('create', () => {
     it('should create a sale', async () => {
-      const dto: CreateSaleDto = { user: 1, saleDetails: [], address: {}, paymentMethodId: 'MercadoPago' };
+      const dto: CreateSaleDto = { userId: 1, details: [], address: {}, paymentMethodId: 1 };
       const result = { id: 'pref_123', price: 100 };
       mockSalesService.create.mockResolvedValue(result);
 
@@ -46,8 +46,8 @@ describe('SalesController', () => {
 
   describe('createManual', () => {
     it('should create a manual sale', async () => {
-      const dto: CreateSaleDto = { user: 1, saleDetails: [], address: {}, paymentMethodId: 'Efectivo' };
-      const result: Sale = { id: 1, total: 100, shipping: 0, created_at: new Date(), updated_at: new Date(), user: {} as any, paymentMethod: 'Efectivo', saleStatus: {} as any, saleDetail: [] };
+      const dto: CreateSaleDto = { userId: 1, details: [], address: {}, paymentMethodId: 1 };
+      const result: Sale = { id: 1, total: 100, shipping: 0, created_at: new Date(), updated_at: new Date(), user: {} as any, paymentMethod: 'Efectivo', paymentChannel: 'Local', saleStatus: {} as any, saleDetail: [], known_client: false };
       mockSalesService.createManual.mockResolvedValue(result);
 
       expect(await controller.createManual(dto)).toBe(result);

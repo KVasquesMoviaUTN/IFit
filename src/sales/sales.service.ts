@@ -80,20 +80,21 @@ export class SalesService {
 
     let totalPrice = 0;
     for (const detail of details) {
-      const unitPrice = await this.productsService.getPrice(detail.productId, 1, detail.presentationId);
+      const unitPrice = detail.price || await this.productsService.getPrice(detail.productId, 1, detail.presentationId);
       const discount = detail.discount || 0;
       totalPrice += (unitPrice - discount) * detail.quantity;
     }
     
     // Manual sales typically don't have shipping cost or it's included/calculated differently.
-    // Assuming 0 for manual sales unless specified.
-    const shipping = 0; 
+    // Use provided shipping cost or default to 0
+    const shipping = saleData.shipping || 0; 
 
     const total = totalPrice + shipping;
 
     const sale = this.saleRepository.create({
       user: saleData.userId ? { id: saleData.userId } : undefined,
       paymentMethod: (saleData.paymentMethod || saleData.paymentMethodId || PaymentMethodEnum.EFECTIVO).toString(),
+      paymentChannel: saleData.paymentChannel || 'Local',
       saleStatus: SaleStatus.COMPLETED, // Default to Completed
       total,
       shipping,
@@ -105,7 +106,7 @@ export class SalesService {
     this.logger.log(`Manual sale created with ID: ${savedSale.id}`);
     
     const saleDetailEntities = await Promise.all(details.map(async (detail) => {
-      const unit_price = await this.productsService.getPrice(detail.productId, 1, detail.presentationId);
+      const unit_price = detail.price || await this.productsService.getPrice(detail.productId, 1, detail.presentationId);
       const discount = detail.discount || 0;
       const subtotal = (unit_price - discount) * detail.quantity;
       

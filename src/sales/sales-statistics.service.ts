@@ -209,6 +209,7 @@ export class SalesStatisticsService {
       .getRawOne();
     
     const totalProfit = parseFloat(totalProfitResult.totalProfit) || 0;
+    const netProfit = totalProfit * 0.9;
 
     // Inactive Customers (Last purchase > 60 days ago)
     const sixtyDaysAgo = new Date();
@@ -228,6 +229,7 @@ export class SalesStatisticsService {
     return {
       totalRevenue,
       totalProfit,
+      netProfit,
       totalSalesCount,
       totalWeight,
       salesByPaymentMethod: salesByPaymentMethod.map(item => ({
@@ -362,8 +364,11 @@ export class SalesStatisticsService {
     const historicalData = monthlySales.map(item => parseFloat(item.total));
     
     // Forecast Data: Pad with nulls for historical months, then add last historical value (to connect line), then forecast
-    const forecastData = new Array(historicalData.length - 1).fill(null);
+    const forecastData: (number | null)[] = [];
     if (historicalData.length > 0) {
+        for (let i = 0; i < historicalData.length - 1; i++) {
+            forecastData.push(null);
+        }
         forecastData.push(historicalData[historicalData.length - 1]); // Connect lines
     }
     forecastData.push(Math.max(0, forecastTotalRevenue));

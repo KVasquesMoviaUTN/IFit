@@ -166,31 +166,38 @@ export class ProductsService {
     this.logger.log(`Decreasing stock for product ${id} (presentation: ${presentationId}) by ${amount}`);
 
     if (presentationId) {
-      const presentation = await this.productsRepository.manager.findOne(Presentation, { where: { id: presentationId } });
-      if (!presentation) {
-          this.logger.error(`Presentation with id ${presentationId} not found`);
-          throw new Error(`Presentation with id ${presentationId} not found`);
-      }
-      
-      if (presentation.stock - amount < NEGATIVE_LIMIT) {
+      const result = await this.productsRepository.manager
+        .createQueryBuilder()
+        .update(Presentation)
+        .set({ stock: () => `stock - ${amount}` })
+        .where("id = :id", { id: presentationId })
+        .andWhere("stock - :amount >= :limit", { amount, limit: NEGATIVE_LIMIT })
+        .execute();
+
+      if (result.affected === 0) {
         this.logger.warn(`Insufficient stock for presentation ${presentationId}. Limit is ${NEGATIVE_LIMIT}`);
         throw new Error(`Insufficient stock for presentation ${presentationId}. Limit is ${NEGATIVE_LIMIT}`);
       }
-      presentation.stock -= amount;
-      await this.productsRepository.manager.save(presentation);
     } else {
-      const product = await this.findOne(id);
-      if (!product) {
-          this.logger.error(`Product with id ${id} not found`);
-          throw new Error(`Product with id ${id} not found`);
-      }
-      
-      if (product.stock - amount < NEGATIVE_LIMIT) {
+      const result = await this.productsRepository
+        .createQueryBuilder()
+        .update(Product)
+        .set({ stock: () => `stock - ${amount}` })
+        .where("id = :id", { id })
+        .andWhere("stock - :amount >= :limit", { amount, limit: NEGATIVE_LIMIT })
+        .execute();
+
+      if (result.affected === 0) {
+        // Check if product exists to give better error message
+        const productExists = await this.productsRepository.findOne({ where: { id } });
+        if (!productExists) {
+             this.logger.error(`Product with id ${id} not found`);
+             throw new Error(`Product with id ${id} not found`);
+        }
+
         this.logger.warn(`Insufficient stock for product ${id}. Limit is ${NEGATIVE_LIMIT}`);
         throw new Error(`Insufficient stock for product ${id}. Limit is ${NEGATIVE_LIMIT}`);
       }
-      product.stock -= amount;
-      await this.productsRepository.save(product);
     }
   }
 

@@ -30,6 +30,9 @@ export class Sale {
   @Column()
   paymentMethod: string;
 
+  @Column({ nullable: true, default: 'Local' })
+  paymentChannel: string;
+
   @Column({
     type: 'enum',
     enum: SaleStatus,
