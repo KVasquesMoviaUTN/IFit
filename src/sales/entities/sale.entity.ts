@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { Users } from 'src/users/user.entity';
+import { Users } from '../../users/user.entity';
 import { SaleStatus } from '../enums/sale-status.enum';
 import { SaleDetail } from './sale-detail.entity';
 
@@ -13,6 +13,9 @@ export class Sale {
 
   @Column()
 	shipping: number;
+
+  @Column({ default: false })
+  known_client: boolean;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;

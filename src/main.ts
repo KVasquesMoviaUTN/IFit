@@ -1,6 +1,7 @@
 import { AppModule } from './app.module';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import compression from 'compression';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
@@ -35,6 +36,13 @@ async function bootstrap() {
 
   app.use(compression());
 
+  // Middleware Logger to debug 401s
+  app.use((req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    console.log(`[Middleware] ${req.method} ${req.url} | Auth: ${authHeader ? 'Present (' + authHeader.substring(0, 15) + '...)' : 'MISSING'}`);
+    next();
+  });
+
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
     whitelist: true,
@@ -43,6 +51,15 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new LoggingInterceptor());
   app.useGlobalFilters(new AllExceptionsFilter());
+
+  const config = new DocumentBuilder()
+    .setTitle('ModoFit API')
+    .setDescription('The ModoFit E-commerce API description')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api/docs', app, document);
 
   await app.listen(process.env.PORT || 3000);
 }

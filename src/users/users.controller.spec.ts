@@ -40,7 +40,7 @@ describe('UsersController', () => {
   describe('create', () => {
     it('should create a user', async () => {
       const dto: CreateUserDto = { name: 'Test', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {} };
-      const result: Users = { id: 1, ...dto, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [] };
+      const result: Users = { id: 1, ...dto, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [], shifts: [] };
       
       mockUsersService.create.mockResolvedValue(result);
 
@@ -58,7 +58,7 @@ describe('UsersController', () => {
 
   describe('findAll', () => {
     it('should return an array of users', async () => {
-      const result: Users[] = [{ id: 1, name: 'Test', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {}, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [] }];
+      const result: Users[] = [{ id: 1, name: 'Test', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {}, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [], shifts: [] }];
       mockUsersService.findAll.mockResolvedValue(result);
 
       expect(await controller.findAll()).toBe(result);
@@ -68,7 +68,7 @@ describe('UsersController', () => {
 
   describe('findOne', () => {
     it('should return a user', async () => {
-      const result: Users = { id: 1, name: 'Test', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {}, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [] };
+      const result: Users = { id: 1, name: 'Test', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {}, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [], shifts: [] };
       mockUsersService.findOne.mockResolvedValue(result);
 
       expect(await controller.findOne(1)).toBe(result);
@@ -79,7 +79,7 @@ describe('UsersController', () => {
   describe('update', () => {
     it('should update a user', async () => {
       const dto: UpdateUserDto = { name: 'Updated', address: {} };
-      const result: Users = { id: 1, name: 'Updated', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {}, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [] };
+      const result: Users = { id: 1, name: 'Updated', surname: 'User', mail: 'test@test.com', password: 'password', phone: '123', address: {}, role: 'user', createdAt: new Date(), updatedAt: new Date(), sales: [], shifts: [] };
       mockUsersService.update.mockResolvedValue(result);
 
       expect(await controller.update(1, dto)).toBe(result);

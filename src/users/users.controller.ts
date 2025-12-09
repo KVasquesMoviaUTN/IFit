@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete, Put, HttpException, HttpStatus, Logger, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, HttpException, HttpStatus, Logger, UseGuards, Req } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { RolesGuard } from 'src/auth/roles.guard';
 import { Roles } from 'src/auth/roles.decorator';
@@ -37,8 +37,11 @@ export class UsersController {
 
   @Get(':id')
   @UseGuards(AuthGuard('jwt'))
-  findOne(@Param('id') id: number): Promise<Users | null> {
+  findOne(@Param('id') id: number, @Req() req): Promise<Users | null> {
     this.logger.log(`Received request to find user with ID: ${id}`);
+    if (req.user.role !== 'admin' && req.user.userId !== +id) {
+       throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+    }
     return this.usersService.findOne(id);
   }
 
@@ -47,8 +50,12 @@ export class UsersController {
   update(
     @Param('id') id: number,
     @Body() updateUserDto: UpdateUserDto,
+    @Req() req
   ): Promise<Users | null> {
     this.logger.log(`Received request to update user with ID: ${id}`);
+    if (req.user.role !== 'admin' && req.user.userId !== +id) {
+       throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+    }
     return this.usersService.update(id, updateUserDto);
   }
 

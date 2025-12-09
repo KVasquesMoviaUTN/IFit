@@ -50,6 +50,31 @@ export class StorageService {
       fileStream.pipe(uploadStream);
     });
   }
+
+  async uploadFile(file: MulterFile): Promise<UploadApiResponse> {
+    return new Promise((resolve, reject) => {
+      // Extract filename without extension to use as public_id
+      const fileName = path.parse(file.originalname).name;
+      
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          resource_type: 'image',
+          folder: 'products',
+          format: 'webp', // Force conversion to WebP
+          public_id: fileName, // Use original filename
+          overwrite: true, // Overwrite if exists with same name
+        },
+        (error, result) => {
+          if (error || !result) {
+            return reject(error || new Error('Error uploading image to Cloudinary'));
+          }
+          resolve(result);
+        }
+      );
+
+      uploadStream.end(file.buffer);
+    });
+  }
   
 
   async uploadImagesFromDirectory(directoryPath: string): Promise<UploadApiResponse[]> {

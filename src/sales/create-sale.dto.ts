@@ -1,30 +1,39 @@
-import { IsString, IsNumber, IsOptional, IsDecimal, IsInt, IsArray, ValidateNested } from 'class-validator';
+import { IsString, IsNumber, IsOptional, IsDecimal, IsInt, IsArray, ValidateNested, IsObject, IsDateString, IsBoolean } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class CreateSaleDto {
-  @IsInt()
   @IsOptional()
-  user?: number;
-
-  @IsString()
-  @IsOptional()
-  paymentMethodId?: string;
-
-  @IsOptional()
-  address: any;
+  @IsNumber()
+  userId?: number;
 
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => SaleDetailDto)
-  saleDetails: SaleDetailDto[];
-  
-  @IsString()
+  details: SaleDetailDto[];
+
   @IsOptional()
+  @IsNumber()
+  paymentMethodId?: number;
+
+  @IsOptional()
+  @IsString()
+  paymentMethod?: string;
+
+  @IsOptional()
+  @IsObject()
+  address?: object;
+
+  @IsOptional()
+  @IsDateString()
   date?: string;
+
+  @IsOptional()
+  @IsBoolean()
+  known_client?: boolean;
 }
 
 export class SaleDetailDto {
-  @IsInt()
+  @IsNumber()
   productId: number;
 
   @IsInt()
@@ -33,4 +42,8 @@ export class SaleDetailDto {
   @IsInt()
   @IsOptional()
   presentationId?: number;
+
+  @IsNumber()
+  @IsOptional()
+  discount?: number;
 }
