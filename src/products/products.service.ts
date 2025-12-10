@@ -270,7 +270,7 @@ export class ProductsService {
     return Math.round(this.calculateDiscount(product, price, quantity));
   }
 
-  async getTotalPrice(cart: { productId: number; quantity: number }[]): Promise<number | null> {
+  async getTotalPrice(cart: { productId: number; quantity: number; presentationId?: number }[]): Promise<number | null> {
     let totalPrice = 0;
 
     for (const product of cart) {
@@ -278,7 +278,15 @@ export class ProductsService {
 
       if (!productSafe) throw new Error(`Producto con ID ${product.productId} no encontrado`);
 
-      totalPrice += Math.round(productSafe.price * product.quantity);
+      let price = productSafe.price;
+      if (product.presentationId) {
+        const presentation = productSafe.presentation.find(p => p.id === product.presentationId);
+        if (presentation) {
+          price = presentation.price;
+        }
+      }
+
+      totalPrice += Math.round(price * product.quantity);
     }
 
     return Math.round(totalPrice);

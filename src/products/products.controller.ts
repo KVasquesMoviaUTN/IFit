@@ -96,9 +96,9 @@ export class ProductsController {
   @Get("/original-price/:id")
   @ApiOperation({ summary: 'Get original price' })
   getOriginaPrice(
-    @Param("id") id: number,
-    @Query("quantity") quantity: number,
-    @Query("presentationId") presentationId?: number
+    @Param("id", ParseIntPipe) id: number,
+    @Query("quantity", ParseIntPipe) quantity: number,
+    @Query("presentationId", new ParseIntPipe({ optional: true })) presentationId?: number
   ): Promise<number | null> {
     return this.productsService.getOriginalPrice(id, quantity, presentationId);
   }
@@ -106,16 +106,20 @@ export class ProductsController {
   @Get("/discount-price/:id")
   @ApiOperation({ summary: 'Get discount price' })
   getDiscountPrice(
-    @Param("id") id: number,
-    @Query("quantity") quantity: number,
-    @Query("presentationId") presentationId?: number
+    @Param("id", ParseIntPipe) id: number,
+    @Query("quantity", ParseIntPipe) quantity: number,
+    @Query("presentationId", new ParseIntPipe({ optional: true })) presentationId?: number
   ): Promise<number | null> {
     return this.productsService.getDiscountPrice(id, quantity, presentationId);
   }
 
   @Get("/price/:id")
   @ApiOperation({ summary: 'Get price' })
-  getPrice(@Param("id") id: number, @Query("quantity") quantity: number, @Query("presentationId") presentationId?: number): Promise<number | null> {
+  getPrice(
+    @Param("id", ParseIntPipe) id: number, 
+    @Query("quantity", ParseIntPipe) quantity: number, 
+    @Query("presentationId", new ParseIntPipe({ optional: true })) presentationId?: number
+  ): Promise<number | null> {
     return this.productsService.getPrice(id, quantity, presentationId);
   }
 
