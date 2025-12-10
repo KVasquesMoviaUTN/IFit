@@ -1,4 +1,5 @@
-import { Sale } from 'src/sales/entities/sale.entity';
+import { Sale } from '../sales/entities/sale.entity';
+import { Shift } from '../shifts/entities/shift.entity';
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 
 @Entity('users')
@@ -6,10 +7,10 @@ export class Users {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   surname: string;
 
   @Column({ type: 'jsonb' })
@@ -35,4 +36,7 @@ export class Users {
 
   @OneToMany(() => Sale, (sale) => sale.user)
   sales: Sale[]
+
+  @OneToMany(() => Shift, (shift) => shift.user)
+  shifts: Shift[]
 }

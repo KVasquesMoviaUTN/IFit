@@ -5,15 +5,18 @@ import { Sale } from './entities/sale.entity';
 import { SaleDetail } from './entities/sale-detail.entity';
 import { SalesController } from './sales.controller';
 import { ProductsModule } from 'src/products/products.module';
-import { SaleStatus } from './entities/sale-status.entity';
-import { PaymentMethod } from './entities/payment-method.entity';
+
+
 import { Users } from 'src/users/user.entity';
+import { Product } from 'src/products/entities/product.entity';
 import { MercadoPagoModule } from 'src/payments/mercado-pago.module';
+import { SalesStatisticsService } from './sales-statistics.service';
+import { SalesStatisticsController } from './sales-statistics.controller';
 
 @Module({
-	imports: [TypeOrmModule.forFeature([Sale, SaleDetail, SaleStatus, PaymentMethod, Users]), ProductsModule, MercadoPagoModule],
-  providers: [SalesService],
-  controllers: [SalesController],
+	imports: [TypeOrmModule.forFeature([Sale, SaleDetail, Users, Product]), ProductsModule, MercadoPagoModule],
+  providers: [SalesService, SalesStatisticsService],
+  controllers: [SalesController, SalesStatisticsController],
   exports: [SalesService]
 })
 export class SalesModule {}

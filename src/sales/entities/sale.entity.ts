@@ -1,7 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { Users } from 'src/users/user.entity';
-import { PaymentMethod } from './payment-method.entity';
-import { SaleStatus } from './sale-status.entity';
+import { Users } from '../../users/user.entity';
+import { SaleStatus } from '../enums/sale-status.enum';
 import { SaleDetail } from './sale-detail.entity';
 
 @Entity('sales')
@@ -15,6 +14,9 @@ export class Sale {
   @Column()
 	shipping: number;
 
+  @Column({ default: false })
+  known_client: boolean;
+
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
@@ -25,12 +27,17 @@ export class Sale {
   @JoinColumn({ name: 'user_id' })
   user: Users;
 
-  @ManyToOne(() => PaymentMethod, (paymentMethod) => paymentMethod.sales, { nullable: true })
-  @JoinColumn({ name: 'payment_method_id' })
-  paymentMethod: PaymentMethod;
+  @Column()
+  paymentMethod: string;
 
-  @ManyToOne(() => SaleStatus, (saleStatus) => saleStatus.sales, { nullable: true })
-  @JoinColumn({ name: 'sale_status_id' })
+  @Column({ nullable: true, default: 'Local' })
+  paymentChannel: string;
+
+  @Column({
+    type: 'enum',
+    enum: SaleStatus,
+    default: SaleStatus.PENDING
+  })
   saleStatus: SaleStatus;
 
   @OneToMany(() => SaleDetail, (saleDetail) => saleDetail.sale)

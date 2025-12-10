@@ -1,4 +1,7 @@
 export class CreatePreferenceDto {
-  id: string;
-  price: number;
+  items: {
+    id: number;
+    quantity: number;
+    presentationId?: number;
+  }[];
 }//TODO pasar todos los productos

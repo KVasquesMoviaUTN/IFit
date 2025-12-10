@@ -9,8 +9,10 @@ import { Module } from '@nestjs/common';
 import { Product } from './products/entities/product.entity';
 import { ProductsModule } from './products/products.module';
 import { SalesModule } from './sales/sales.module';
+import { AnalyticsModule } from './analytics/analytics.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { StorageModule } from './storage/storage.module';
+import { ShiftsModule } from './shifts/shifts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { WinstonModule, utilities as nestWinstonModuleUtilities } from 'nest-winston';
@@ -57,7 +59,9 @@ import * as winston from 'winston';
     UsersModule,
     StorageModule,
     SalesModule,
+    AnalyticsModule,
     AuthModule,
+    ShiftsModule,
     TypeOrmModule.forFeature([Product]),
   ],
   controllers: [ConfigController],

@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MercadoPagoService } from './mercadopago.service';
 import { MercadoPagoConfig, Preference } from 'mercadopago';
+import { ProductsService } from '../products/products.service';
 
 // Mock mercadopago
 jest.mock('mercadopago', () => {
@@ -15,6 +16,7 @@ jest.mock('mercadopago', () => {
 describe('MercadoPagoService', () => {
   let service: MercadoPagoService;
   let mockPreferenceCreate: jest.Mock;
+  let mockProductsService: any;
 
   beforeEach(async () => {
     mockPreferenceCreate = jest.fn();
@@ -22,8 +24,15 @@ describe('MercadoPagoService', () => {
       create: mockPreferenceCreate,
     }));
 
+    mockProductsService = {
+      getTotalFinalPrice: jest.fn().mockResolvedValue(100),
+    };
+
     const module: TestingModule = await Test.createTestingModule({
-      providers: [MercadoPagoService],
+      providers: [
+        MercadoPagoService,
+        { provide: ProductsService, useValue: mockProductsService },
+      ],
     }).compile();
 
     service = module.get<MercadoPagoService>(MercadoPagoService);
@@ -38,12 +47,17 @@ describe('MercadoPagoService', () => {
       const mockResponse = { id: '123', init_point: 'http://test.com' };
       mockPreferenceCreate.mockResolvedValue(mockResponse);
 
-      const dto = { id: '1', price: 100 };
+      const dto = { 
+        items: [
+          { id: 1, quantity: 1 }
+        ]
+      };
       const result = await service.createPreference(dto);
 
       expect(result).toEqual(mockResponse);
       expect(MercadoPagoConfig).toHaveBeenCalled();
       expect(Preference).toHaveBeenCalled();
+      expect(mockProductsService.getTotalFinalPrice).toHaveBeenCalled();
       expect(mockPreferenceCreate).toHaveBeenCalledWith(expect.objectContaining({
         body: expect.objectContaining({
           items: expect.arrayContaining([
@@ -58,7 +72,11 @@ describe('MercadoPagoService', () => {
     it('should return null on error', async () => {
       mockPreferenceCreate.mockRejectedValue(new Error('API Error'));
 
-      const dto = { id: '1', price: 100 };
+      const dto = { 
+        items: [
+          { id: 1, quantity: 1 }
+        ]
+      };
       const result = await service.createPreference(dto);
 
       expect(result).toBeNull();

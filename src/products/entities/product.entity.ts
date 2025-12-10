@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { Category } from './category.entity';
-import { SaleDetail } from 'src/sales/entities/sale-detail.entity';
+import { SaleDetail } from '../../sales/entities/sale-detail.entity';
 import { Presentation } from './presentation.entity';
 import { ProductImage } from './product-image.entity';
 

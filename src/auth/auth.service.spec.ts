@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Users } from '../users/user.entity';
 import * as bcrypt from 'bcryptjs';
+import { JwtService } from '@nestjs/jwt';
 
 // Mock bcryptjs
 jest.mock('bcryptjs', () => ({
@@ -24,6 +25,12 @@ describe('AuthService', () => {
         {
           provide: getRepositoryToken(Users),
           useValue: mockUserRepository,
+        },
+        {
+          provide: JwtService,
+          useValue: {
+            sign: jest.fn(() => 'mockToken'),
+          },
         },
       ],
     }).compile();
@@ -71,15 +78,12 @@ describe('AuthService', () => {
 
       const result = await service.validateUser('test@test.com', 'password');
       expect(result).toEqual({
-        message: 'Inicio de sesión exitoso',
-        user: {
           id: user.id,
           name: user.name,
           phone: user.phone,
           address: user.address,
           surname: user.surname,
           role: user.role,
-        },
       });
     });
   });
