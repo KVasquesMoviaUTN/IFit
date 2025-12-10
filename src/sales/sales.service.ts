@@ -63,8 +63,11 @@ export class SalesService {
     await this.saleDetailRepository.save(saleDetailEntities);
 
     const preferenceDTO = {
-      id: "1",//TODO hacer dinamico
-      price: total,
+      items: details.map(detail => ({
+        id: detail.productId,
+        quantity: detail.quantity,
+        presentationId: detail.presentationId
+      }))
     };
 
     const preference = await this.paymentService.createPreference(preferenceDTO);

@@ -12,7 +12,7 @@ export class SalesStatisticsController {
   constructor(private readonly salesStatisticsService: SalesStatisticsService) {} // Changed service property name
 
   @Get()
-  @Roles(Role.ADMIN, Role.USER)
+  @Roles(Role.ADMIN)
   async getStatistics(@Query() filters: SalesStatisticsFiltersDto) {
     const now = new Date();
     const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);

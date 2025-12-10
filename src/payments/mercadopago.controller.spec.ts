@@ -32,7 +32,11 @@ describe('MercadoPagoController', () => {
 
   describe('createPreference', () => {
     it('should create a preference', async () => {
-      const dto: CreatePreferenceDto = { id: '1', price: 100 };
+      const dto: CreatePreferenceDto = { 
+        items: [
+          { id: 1, quantity: 1 }
+        ]
+      };
       const result = { id: 'pref_123' };
       mockMercadoPagoService.createPreference.mockResolvedValue(result);
 
