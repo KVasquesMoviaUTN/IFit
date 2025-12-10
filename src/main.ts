@@ -20,7 +20,7 @@ async function bootstrap() {
   app.enableCors({
     origin: (origin, callback) => {
       const isAllowed = isProduction
-        ? allowedOrigins.includes(origin)
+        ? allowedOrigins.includes(origin) || !origin
         : !origin || origin.startsWith('http://localhost');
       
       if (isAllowed) {
