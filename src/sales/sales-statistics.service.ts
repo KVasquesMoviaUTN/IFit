@@ -209,7 +209,10 @@ export class SalesStatisticsService {
       .getRawOne();
     
     const totalProfit = parseFloat(totalProfitResult.totalProfit) || 0;
-    const netProfit = totalProfit * 0.9;
+    // Net Profit = (Revenue * 0.9) - Cost
+    // Cost = Revenue - Gross Profit (totalProfit)
+    const totalCost = totalRevenue - totalProfit;
+    const netProfit = (totalRevenue * 0.9) - totalCost;
 
     // Inactive Customers (Last purchase > 60 days ago)
     const sixtyDaysAgo = new Date();

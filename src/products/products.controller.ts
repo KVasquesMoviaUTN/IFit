@@ -7,6 +7,7 @@ import { CreateProductDto } from "./dto/create-product.dto";
 import { ProductsService } from "./products.service";
 import { Product } from "./entities/product.entity";
 import { ProductImage } from "./entities/product-image.entity";
+import { ProductPriceHistory } from "./entities/product-price-history.entity";
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiQuery } from '@nestjs/swagger';
 
 @ApiTags('Products')
@@ -83,6 +84,13 @@ export class ProductsController {
   @ApiResponse({ status: 200, description: 'Return product images.', type: [ProductImage] })
   async findImages(@Param("productId") productId: number, @Query("presentationId") presentationId?: number): Promise<ProductImage[]> {
     return this.productsService.findImages(productId, Number(presentationId));
+  }
+
+  @Get(":id/price-history")
+  @ApiOperation({ summary: 'Get product price history' })
+  @ApiResponse({ status: 200, description: 'Return product price history.', type: [ProductPriceHistory] })
+  async getPriceHistory(@Param("id") id: number): Promise<ProductPriceHistory[]> {
+    return this.productsService.getPriceHistory(id);
   }
 
   @Get("/original-price/:id")

@@ -24,6 +24,9 @@ export class SaleDetail {
   @Column('decimal', { precision: 10, scale: 2, default: 0 })
   discount: number;
 
+  @Column('decimal', { precision: 10, scale: 2, default: 0 })
+  purchase_price: number;
+
   @ManyToOne(() => Sale, (sale) => sale.saleDetail)
   @JoinColumn({ name: 'sale_id' })
   sale: Sale;

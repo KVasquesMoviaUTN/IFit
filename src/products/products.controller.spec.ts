@@ -24,6 +24,7 @@ describe('ProductsController', () => {
     getTotalFinalPrice: jest.fn(),
     update: jest.fn(),
     delete: jest.fn(),
+    getPriceHistory: jest.fn(),
   };
 
   beforeEach(async () => {
@@ -93,6 +94,16 @@ describe('ProductsController', () => {
 
       expect(await controller.remove(1)).toBeUndefined();
       expect(mockProductsService.delete).toHaveBeenCalledWith(1);
+    });
+  });
+
+  describe('getPriceHistory', () => {
+    it('should return price history', async () => {
+      const result = [{ id: 1, price: 100, purchase_price: 50, created_at: new Date() }] as any;
+      mockProductsService.getPriceHistory.mockResolvedValue(result);
+
+      expect(await controller.getPriceHistory(1)).toBe(result);
+      expect(mockProductsService.getPriceHistory).toHaveBeenCalledWith(1);
     });
   });
 });

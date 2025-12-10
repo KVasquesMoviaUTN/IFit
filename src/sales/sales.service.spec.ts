@@ -28,6 +28,7 @@ describe('SalesService', () => {
     mockProductsService = {
       getPrice: jest.fn(),
       decreaseStock: jest.fn(),
+      findOne: jest.fn(),
     };
     mockMercadoPagoService = {
       createPreference: jest.fn(),
@@ -74,7 +75,9 @@ describe('SalesService', () => {
       };
 
       const mockProductPrice = 100;
+      const mockPurchasePrice = 50;
       mockProductsService.getPrice.mockResolvedValue(mockProductPrice);
+      mockProductsService.findOne.mockResolvedValue({ purchase_price: mockPurchasePrice });
       
       const expectedTotal = 100 * 2;
 
@@ -89,6 +92,10 @@ describe('SalesService', () => {
         total: expectedTotal
       }));
       expect(mockProductsService.getPrice).toHaveBeenCalledWith(1, 1, 1);
+      expect(mockProductsService.findOne).toHaveBeenCalledWith(1);
+      expect(mockSaleDetailRepository.create).toHaveBeenCalledWith(expect.objectContaining({
+        purchase_price: mockPurchasePrice
+      }));
       expect(mockSaleDetailRepository.save).toHaveBeenCalled();
     });
     it('should create a manual sale with custom price', async () => {
@@ -102,7 +109,9 @@ describe('SalesService', () => {
       };
 
       const mockProductPrice = 100; // Default price
+      const mockPurchasePrice = 50;
       mockProductsService.getPrice.mockResolvedValue(mockProductPrice);
+      mockProductsService.findOne.mockResolvedValue({ purchase_price: mockPurchasePrice });
       
       const expectedTotal = 150 * 2; // Should use custom price (150) instead of default (100)
 

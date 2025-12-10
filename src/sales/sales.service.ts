@@ -49,12 +49,14 @@ export class SalesService {
     
     const saleDetailEntities = await Promise.all(details.map(async (detail) => {
       const subtotal = await this.productsService.getPrice(detail.productId, detail.quantity);
+      const product = await this.productsService.findOne(detail.productId);
       
       return this.saleDetailRepository.create({
         product: { id: detail.productId } as Product,
         quantity: detail.quantity,
         sale: savedSale,
         subtotal,
+        purchase_price: product ? product.purchase_price : 0,
       });
     }));
     
@@ -113,6 +115,8 @@ export class SalesService {
       // Decrease stock for manual sales immediately
       await this.productsService.decreaseStock(detail.productId, detail.quantity, detail.presentationId);
 
+      const product = await this.productsService.findOne(detail.productId);
+
       return this.saleDetailRepository.create({
         product: { id: detail.productId } as Product,
         presentation: detail.presentationId ? { id: detail.presentationId } : undefined,
@@ -121,6 +125,7 @@ export class SalesService {
         unit_price,
         discount,
         subtotal,
+        purchase_price: product ? product.purchase_price : 0,
       });
     }));
     

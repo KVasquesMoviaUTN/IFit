@@ -60,17 +60,19 @@ describe('SalesStatisticsService', () => {
   });
 
   describe('getStatistics', () => {
-    it('should calculate netProfit as 90% of totalProfit', async () => {
-      const mockTotalProfit = 1000;
-      const mockNetProfit = 900;
+    it('should calculate netProfit as (Revenue * 0.9) - Cost', async () => {
+      const mockTotalRevenue = 10000;
+      const mockTotalProfit = 2000; // Gross Profit
+      // Cost = 10000 - 2000 = 8000
+      // Net Profit = (10000 * 0.9) - 8000 = 9000 - 8000 = 1000
+      const mockNetProfit = 1000;
 
       const mockQueryBuilder = mockSaleRepository.createQueryBuilder();
       
       // Mocking specific calls based on the order they appear in the service
-      // This is a bit brittle but sufficient for verifying the specific logic
       
       // Total Revenue
-      mockQueryBuilder.getRawOne.mockResolvedValueOnce({ total: '10000' });
+      mockQueryBuilder.getRawOne.mockResolvedValueOnce({ total: mockTotalRevenue.toString() });
       // Total Sales Count
       mockQueryBuilder.getCount.mockResolvedValueOnce(10);
       // Sales by Payment Method
@@ -111,6 +113,7 @@ describe('SalesStatisticsService', () => {
 
       const result = await service.getStatistics({});
 
+      expect(result.totalRevenue).toBe(mockTotalRevenue);
       expect(result.totalProfit).toBe(mockTotalProfit);
       expect(result.netProfit).toBe(mockNetProfit);
     });

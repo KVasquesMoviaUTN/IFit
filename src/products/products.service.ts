@@ -312,4 +312,11 @@ export class ProductsService {
     let discountPrice = Math.round(price * (1 - product.discount / 100));
     return Math.round(quantity > 4 ? discountPrice * quantity * (1 - parseFloat(process.env.DESCUENTO ?? "0")) : discountPrice * quantity);
   }
+
+  async getPriceHistory(productId: number): Promise<ProductPriceHistory[]> {
+    return this.productPriceHistoryRepository.find({
+      where: { product: { id: productId } },
+      order: { created_at: 'DESC' }
+    });
+  }
 }
