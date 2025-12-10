@@ -14,8 +14,8 @@ async function bootstrap() {
   const isProduction = process.env.NODE_ENV === 'production';
 
   const allowedOrigins = isProduction
-    ? (process.env.CORS_ORIGINS || '').split(',')
-    : ['http://localhost:8080'];
+    ? (process.env.CORS_ORIGINS || '').split(',').concat(['https://www.modofit.shop', 'https://modofit.shop'])
+    : ['http://localhost:8080', 'http://localhost:5173'];
 
   app.enableCors({
     origin: (origin, callback) => {
