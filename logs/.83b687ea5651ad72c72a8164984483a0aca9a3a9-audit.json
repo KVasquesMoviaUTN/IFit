@@ -31,9 +31,25 @@
             "hash": "f2261a2fb3ea7a88db74f8742ad69e6af6346f958a01eb4c2ae362075fc616b3"
         },
         {
+<<<<<<< HEAD
             "date": 1765768273758,
             "name": "logs/application-2025-12-15.log",
             "hash": "06d870e635b1dbae85dd7c745bdabfb6712eea3037582351a34c47546337534f"
+=======
+            "date": 1765508683315,
+            "name": "logs/application-2025-12-12.log",
+            "hash": "4c94902a0b0b4e13fd92c14db0b67eca80e0ea1b105da654eb63b147e7f786f2"
+        },
+        {
+            "date": 1765673005650,
+            "name": "logs/application-2025-12-13.log",
+            "hash": "6f56b7b6752cca37599828422878c28e43a465da284d786761901e70e2d3f858"
+        },
+        {
+            "date": 1765768035066,
+            "name": "logs/application-2025-12-15.log",
+            "hash": "18fb858e315a170d8b12bcb44d4a314dff34acb6acbf1134b557b1a1bde36625"
+>>>>>>> feature/SSO
         }
     ],
     "hashType": "sha256"

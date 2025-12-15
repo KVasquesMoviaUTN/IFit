@@ -46,11 +46,44 @@ export class AuthService {
     };
   }
 
+  async validateGoogleUser(googleUser: any): Promise<ValidatedUser> {
+    Logger.log(`Validating Google user: ${googleUser.email}`, 'AuthService');
+    let user = await this.userRepository.findOne({ where: { mail: ILike(googleUser.email) } });
+
+    if (!user) {
+      Logger.log(`User not found, creating new user: ${googleUser.email}`, 'AuthService');
+      user = this.userRepository.create({
+        mail: googleUser.email,
+        name: googleUser.firstName,
+        surname: googleUser.lastName,
+        password: '', // No password for Google users
+        phone: '',
+        address: {},
+        role: 'user',
+      });
+      await this.userRepository.save(user);
+    }
+
+    const { id, name, surname, address, phone, role } = user;
+    return {
+      id,
+      name,
+      surname,
+      address,
+      phone,
+      role,
+    };
+  }
+
   async login(user: ValidatedUser) {
     const payload = { sub: user.id.toString(), role: user.role };
     return {
       user,
       token: this.jwtService.sign(payload),
     };
+  }
+
+  async getProfile(userId: number) {
+    return this.userRepository.findOne({ where: { id: userId } });
   }
 }
