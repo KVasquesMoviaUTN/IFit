@@ -36,12 +36,7 @@ async function bootstrap() {
 
   app.use(compression());
 
-  // Middleware Logger to debug 401s
-  app.use((req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    console.log(`[Middleware] ${req.method} ${req.url} | Auth: ${authHeader ? 'Present (' + authHeader.substring(0, 15) + '...)' : 'MISSING'}`);
-    next();
-  });
+
 
   app.useGlobalPipes(new ValidationPipe({
     transform: true,

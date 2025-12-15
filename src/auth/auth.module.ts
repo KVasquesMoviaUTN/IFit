@@ -18,7 +18,6 @@ import { GoogleStrategy } from './google.strategy';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
         const secret = configService.get<string>('JWT_SECRET') || 'secretKey';
-        console.log(`[AuthModule] JWT Secret starts with: ${secret.substring(0, 3)}`);
         return {
           secret,
           signOptions: { expiresIn: '24h' },
