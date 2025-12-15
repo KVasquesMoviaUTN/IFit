@@ -200,3 +200,6 @@
 {"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, PATCH} route","timestamp":"2025-12-15T14:24:39.951Z"}
 {"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, DELETE} route","timestamp":"2025-12-15T14:24:39.951Z"}
 {"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-12-15T14:24:39.954Z"}
+{"context":"AuthService","level":"info","message":"Validating Google user: kalilvasquesmovia@gmail.com","timestamp":"2025-12-15T14:30:36.098Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /auth/google/callback?code=4%2F0ATX87lPGuV_wunkSes7Vvlj7s-6HgKoLKa84vWmZ20J3U9MhbX8-yTVSaDd_eaIkyY5DBA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none","timestamp":"2025-12-15T14:30:37.391Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /auth/google/callback?code=4%2F0ATX87lPGuV_wunkSes7Vvlj7s-6HgKoLKa84vWmZ20J3U9MhbX8-yTVSaDd_eaIkyY5DBA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none - 5ms","timestamp":"2025-12-15T14:30:37.396Z"}
