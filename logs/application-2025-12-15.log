@@ -1,0 +1,46 @@
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: POST /analytics/track","timestamp":"2025-12-15T03:07:15.065Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/new","timestamp":"2025-12-15T03:07:15.072Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get new products","timestamp":"2025-12-15T03:07:15.072Z"}
+{"context":"ProductsService","level":"info","message":"Fetching new products","timestamp":"2025-12-15T03:07:15.072Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /config","timestamp":"2025-12-15T03:07:15.075Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /config - 0ms","timestamp":"2025-12-15T03:07:15.076Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: POST /analytics/track","timestamp":"2025-12-15T03:07:15.079Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=1&pageSize=9","timestamp":"2025-12-15T03:07:15.085Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 1","timestamp":"2025-12-15T03:07:15.085Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 1 with size 9","timestamp":"2025-12-15T03:07:15.086Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/new - 27ms","timestamp":"2025-12-15T03:07:15.099Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: POST /analytics/track - 38ms","timestamp":"2025-12-15T03:07:15.103Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=1&pageSize=9 - 19ms","timestamp":"2025-12-15T03:07:15.104Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: POST /analytics/track - 26ms","timestamp":"2025-12-15T03:07:15.105Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/highlighted","timestamp":"2025-12-15T03:07:15.151Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get highlighted products","timestamp":"2025-12-15T03:07:15.152Z"}
+{"context":"ProductsService","level":"info","message":"Fetching highlighted products","timestamp":"2025-12-15T03:07:15.152Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/highlighted - 3ms","timestamp":"2025-12-15T03:07:15.154Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/discounted","timestamp":"2025-12-15T03:07:15.215Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get discounted products","timestamp":"2025-12-15T03:07:15.215Z"}
+{"context":"ProductsService","level":"info","message":"Fetching discounted products","timestamp":"2025-12-15T03:07:15.215Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/discounted - 2ms","timestamp":"2025-12-15T03:07:15.217Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=1","timestamp":"2025-12-15T03:07:15.243Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 1","timestamp":"2025-12-15T03:07:15.244Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 1 with size 20","timestamp":"2025-12-15T03:07:15.244Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=1 - 4ms","timestamp":"2025-12-15T03:07:15.247Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=2","timestamp":"2025-12-15T03:07:15.282Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 2","timestamp":"2025-12-15T03:07:15.283Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 2 with size 20","timestamp":"2025-12-15T03:07:15.283Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=2 - 5ms","timestamp":"2025-12-15T03:07:15.287Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=3","timestamp":"2025-12-15T03:07:15.376Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 3","timestamp":"2025-12-15T03:07:15.376Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 3 with size 20","timestamp":"2025-12-15T03:07:15.376Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=3 - 3ms","timestamp":"2025-12-15T03:07:15.378Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=4","timestamp":"2025-12-15T03:07:15.440Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 4","timestamp":"2025-12-15T03:07:15.440Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 4 with size 20","timestamp":"2025-12-15T03:07:15.440Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=4 - 2ms","timestamp":"2025-12-15T03:07:15.442Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=5","timestamp":"2025-12-15T03:07:15.544Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 5","timestamp":"2025-12-15T03:07:15.545Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 5 with size 20","timestamp":"2025-12-15T03:07:15.545Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=5 - 3ms","timestamp":"2025-12-15T03:07:15.547Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=6","timestamp":"2025-12-15T03:07:15.634Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 6","timestamp":"2025-12-15T03:07:15.634Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 6 with size 20","timestamp":"2025-12-15T03:07:15.634Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=6 - 2ms","timestamp":"2025-12-15T03:07:15.636Z"}
