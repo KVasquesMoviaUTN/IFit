@@ -34,3 +34,5 @@
 >>>>>>> feature/SSO
 {"level":"info","message":"query","query":"SELECT version()","timestamp":"2025-12-15T03:11:37.845Z"}
 {"level":"info","message":"query","query":"SELECT * FROM current_schema()","timestamp":"2025-12-15T03:11:38.011Z"}
+{"level":"info","message":"query","query":"SELECT version()","timestamp":"2025-12-15T14:24:39.575Z"}
+{"level":"info","message":"query","query":"SELECT * FROM current_schema()","timestamp":"2025-12-15T14:24:39.742Z"}

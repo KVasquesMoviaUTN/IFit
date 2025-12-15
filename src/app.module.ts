@@ -3,14 +3,14 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigController } from './config/config.controller';
 import { ConfigModule } from '@nestjs/config';
 import { databaseConfig } from './config/database.config';
-import { join } from 'path';
+
 import { MercadoPagoModule } from './payments/mercado-pago.module';
 import { Module } from '@nestjs/common';
 import { Product } from './products/entities/product.entity';
 import { ProductsModule } from './products/products.module';
 import { SalesModule } from './sales/sales.module';
 import { AnalyticsModule } from './analytics/analytics.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
+
 import { StorageModule } from './storage/storage.module';
 import { ShiftsModule } from './shifts/shifts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -21,9 +21,7 @@ import * as winston from 'winston';
 
 @Module({
   imports: [
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
-    }),
+
     ConfigModule.forRoot({
       isGlobal: true,
     }),
