@@ -1,0 +1,2 @@
+{"level":"info","message":"query","query":"SELECT version()","timestamp":"2025-12-15T03:11:14.962Z"}
+{"level":"info","message":"query","query":"SELECT * FROM current_schema()","timestamp":"2025-12-15T03:11:15.126Z"}
