@@ -647,7 +647,9 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {}
+  "public": {
+    "apiBase": "http://localhost:3000"
+  }
 };
 const envOptions = {
   prefix: "NITRO_",
@@ -1364,7 +1366,7 @@ const _nzzKvDS5faaxdbSDz2T6lqop9QJ8CVyfRHc8Tv6swJA = (function(nitro) {
 
 const rootDir = "/home/kalil/work/IFit/frontend-nuxt";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Compra suplementos y productos saludables al mejor precio en Modo Fit."}],"link":[{"rel":"icon","type":"image/png","href":"/favicon.png"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"}],"style":[],"script":[{"src":"https://www.googletagmanager.com/gtag/js?id=G-YZ7EDV3NNV","async":true},{"children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-YZ7EDV3NNV');\n          "}],"noscript":[],"title":"Modo Fit - Tu Tienda de Suplementos"};
 
 const appRootTag = "div";
 
