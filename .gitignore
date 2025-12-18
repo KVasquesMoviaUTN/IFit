@@ -6,7 +6,8 @@ node_modules/
 [._]ss[a-gi-z]
 [._]sw[a-p]
 ./src/database.config.ts
-./logs
+logs/
+*.log
 .env
 
 frontend-nuxt/
