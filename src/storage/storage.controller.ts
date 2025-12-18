@@ -28,6 +28,7 @@ export class StorageController {
     if (!file) {
       throw new BadRequestException('No se ha proporcionado ningún archivo');
     }
+    console.log('Received file for upload:', file.originalname);
     return this.cloudinaryService.uploadFile(file);
   }
 }

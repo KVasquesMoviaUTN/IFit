@@ -9,10 +9,20 @@ import * as path from 'path';
 @Injectable()
 export class StorageService {
   constructor(private configService: ConfigService) {
+    const cloudName = this.configService.get('CLOUDINARY_CLOUD_NAME');
+    const apiKey = this.configService.get('CLOUDINARY_API_KEY');
+    const apiSecret = this.configService.get('CLOUDINARY_API_SECRET');
+
+    console.log('Cloudinary Config Check:', {
+      cloudName: cloudName ? 'Present' : 'Missing',
+      apiKey: apiKey ? 'Present' : 'Missing',
+      apiSecret: apiSecret ? 'Present' : 'Missing',
+    });
+
     cloudinary.config({
-      cloud_name: this.configService.get('CLOUDINARY_CLOUD_NAME'),
-      api_key: this.configService.get('CLOUDINARY_API_KEY'),
-      api_secret: this.configService.get('CLOUDINARY_API_SECRET'),
+      cloud_name: cloudName,
+      api_key: apiKey,
+      api_secret: apiSecret,
     });
   }
 
@@ -66,6 +76,7 @@ export class StorageService {
         },
         (error, result) => {
           if (error || !result) {
+            console.error('Cloudinary Upload Error:', error);
             return reject(error || new Error('Error uploading image to Cloudinary'));
           }
           resolve(result);
