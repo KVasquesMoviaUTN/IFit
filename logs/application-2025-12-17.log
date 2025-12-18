@@ -1523,3 +1523,273 @@
 {"context":"ProductsController","level":"info","message":"Received request to get products page 6","timestamp":"2025-12-18T02:07:12.543Z"}
 {"context":"ProductsService","level":"info","message":"Fetching products page 6 with size 20","timestamp":"2025-12-18T02:07:12.544Z"}
 {"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=6 - 2ms","timestamp":"2025-12-18T02:07:12.545Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/new","timestamp":"2025-12-18T02:17:13.887Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get new products","timestamp":"2025-12-18T02:17:13.887Z"}
+{"context":"ProductsService","level":"info","message":"Fetching new products","timestamp":"2025-12-18T02:17:13.887Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/highlighted","timestamp":"2025-12-18T02:17:13.888Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get highlighted products","timestamp":"2025-12-18T02:17:13.888Z"}
+{"context":"ProductsService","level":"info","message":"Fetching highlighted products","timestamp":"2025-12-18T02:17:13.889Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/discounted","timestamp":"2025-12-18T02:17:13.889Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get discounted products","timestamp":"2025-12-18T02:17:13.889Z"}
+{"context":"ProductsService","level":"info","message":"Fetching discounted products","timestamp":"2025-12-18T02:17:13.889Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=1","timestamp":"2025-12-18T02:17:13.890Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 1","timestamp":"2025-12-18T02:17:13.890Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 1 with size 20","timestamp":"2025-12-18T02:17:13.890Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /config","timestamp":"2025-12-18T02:17:13.891Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /config - 0ms","timestamp":"2025-12-18T02:17:13.891Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/highlighted - 9ms","timestamp":"2025-12-18T02:17:13.897Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/discounted - 9ms","timestamp":"2025-12-18T02:17:13.898Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/new - 12ms","timestamp":"2025-12-18T02:17:13.899Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=1 - 10ms","timestamp":"2025-12-18T02:17:13.901Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: POST /analytics/track","timestamp":"2025-12-18T02:17:14.871Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: POST /analytics/track - 3ms","timestamp":"2025-12-18T02:17:14.875Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=2","timestamp":"2025-12-18T02:36:50.594Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 2","timestamp":"2025-12-18T02:36:50.594Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 2 with size 20","timestamp":"2025-12-18T02:36:50.594Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=2 - 5ms","timestamp":"2025-12-18T02:36:50.599Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=3","timestamp":"2025-12-18T02:36:50.731Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 3","timestamp":"2025-12-18T02:36:50.732Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 3 with size 20","timestamp":"2025-12-18T02:36:50.732Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=3 - 6ms","timestamp":"2025-12-18T02:36:50.737Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=4","timestamp":"2025-12-18T02:36:50.861Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 4","timestamp":"2025-12-18T02:36:50.861Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 4 with size 20","timestamp":"2025-12-18T02:36:50.861Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=4 - 6ms","timestamp":"2025-12-18T02:36:50.866Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=5","timestamp":"2025-12-18T02:36:50.874Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 5","timestamp":"2025-12-18T02:36:50.874Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 5 with size 20","timestamp":"2025-12-18T02:36:50.874Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=5 - 7ms","timestamp":"2025-12-18T02:36:50.880Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=6","timestamp":"2025-12-18T02:36:50.893Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 6","timestamp":"2025-12-18T02:36:50.894Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 6 with size 20","timestamp":"2025-12-18T02:36:50.894Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=6 - 4ms","timestamp":"2025-12-18T02:36:50.897Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/new","timestamp":"2025-12-18T02:49:43.962Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get new products","timestamp":"2025-12-18T02:49:43.981Z"}
+{"context":"ProductsService","level":"info","message":"Fetching new products","timestamp":"2025-12-18T02:49:43.981Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/discounted","timestamp":"2025-12-18T02:49:44.034Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get discounted products","timestamp":"2025-12-18T02:49:44.035Z"}
+{"context":"ProductsService","level":"info","message":"Fetching discounted products","timestamp":"2025-12-18T02:49:44.035Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=1","timestamp":"2025-12-18T02:49:44.067Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 1","timestamp":"2025-12-18T02:49:44.068Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 1 with size 20","timestamp":"2025-12-18T02:49:44.069Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /config","timestamp":"2025-12-18T02:49:44.074Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /config - 1ms","timestamp":"2025-12-18T02:49:44.074Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/highlighted","timestamp":"2025-12-18T02:49:44.084Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get highlighted products","timestamp":"2025-12-18T02:49:44.084Z"}
+{"context":"ProductsService","level":"info","message":"Fetching highlighted products","timestamp":"2025-12-18T02:49:44.084Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/highlighted - 62ms","timestamp":"2025-12-18T02:49:44.146Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/new - 207ms","timestamp":"2025-12-18T02:49:44.152Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/discounted - 127ms","timestamp":"2025-12-18T02:49:44.160Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=1 - 98ms","timestamp":"2025-12-18T02:49:44.165Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: POST /analytics/track","timestamp":"2025-12-18T02:53:16.180Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: POST /analytics/track - 25ms","timestamp":"2025-12-18T02:53:16.205Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=2","timestamp":"2025-12-18T02:53:16.497Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 2","timestamp":"2025-12-18T02:53:16.498Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 2 with size 20","timestamp":"2025-12-18T02:53:16.498Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=2 - 5ms","timestamp":"2025-12-18T02:53:16.502Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=3","timestamp":"2025-12-18T02:53:16.696Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 3","timestamp":"2025-12-18T02:53:16.697Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 3 with size 20","timestamp":"2025-12-18T02:53:16.697Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=3 - 9ms","timestamp":"2025-12-18T02:53:16.705Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=4","timestamp":"2025-12-18T02:53:16.821Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 4","timestamp":"2025-12-18T02:53:16.821Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 4 with size 20","timestamp":"2025-12-18T02:53:16.821Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=4 - 8ms","timestamp":"2025-12-18T02:53:16.828Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=5","timestamp":"2025-12-18T02:53:16.837Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 5","timestamp":"2025-12-18T02:53:16.838Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 5 with size 20","timestamp":"2025-12-18T02:53:16.838Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=5 - 8ms","timestamp":"2025-12-18T02:53:16.845Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=6","timestamp":"2025-12-18T02:53:16.853Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 6","timestamp":"2025-12-18T02:53:16.853Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 6 with size 20","timestamp":"2025-12-18T02:53:16.853Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=6 - 2ms","timestamp":"2025-12-18T02:53:16.855Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/new","timestamp":"2025-12-18T02:54:41.029Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get new products","timestamp":"2025-12-18T02:54:41.030Z"}
+{"context":"ProductsService","level":"info","message":"Fetching new products","timestamp":"2025-12-18T02:54:41.030Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/highlighted","timestamp":"2025-12-18T02:54:41.032Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get highlighted products","timestamp":"2025-12-18T02:54:41.032Z"}
+{"context":"ProductsService","level":"info","message":"Fetching highlighted products","timestamp":"2025-12-18T02:54:41.032Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products/discounted","timestamp":"2025-12-18T02:54:41.033Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get discounted products","timestamp":"2025-12-18T02:54:41.033Z"}
+{"context":"ProductsService","level":"info","message":"Fetching discounted products","timestamp":"2025-12-18T02:54:41.033Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=1","timestamp":"2025-12-18T02:54:41.034Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 1","timestamp":"2025-12-18T02:54:41.034Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 1 with size 20","timestamp":"2025-12-18T02:54:41.035Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /config","timestamp":"2025-12-18T02:54:41.036Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /config - 0ms","timestamp":"2025-12-18T02:54:41.036Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/discounted - 24ms","timestamp":"2025-12-18T02:54:41.057Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/highlighted - 27ms","timestamp":"2025-12-18T02:54:41.058Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products/new - 32ms","timestamp":"2025-12-18T02:54:41.061Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=1 - 32ms","timestamp":"2025-12-18T02:54:41.066Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: POST /analytics/track","timestamp":"2025-12-18T02:54:42.165Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: POST /analytics/track - 9ms","timestamp":"2025-12-18T02:54:42.175Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=2","timestamp":"2025-12-18T02:54:42.379Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 2","timestamp":"2025-12-18T02:54:42.380Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 2 with size 20","timestamp":"2025-12-18T02:54:42.380Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=2 - 4ms","timestamp":"2025-12-18T02:54:42.383Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=3","timestamp":"2025-12-18T02:54:42.424Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 3","timestamp":"2025-12-18T02:54:42.424Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 3 with size 20","timestamp":"2025-12-18T02:54:42.425Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=3 - 3ms","timestamp":"2025-12-18T02:54:42.427Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=4","timestamp":"2025-12-18T02:54:42.499Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 4","timestamp":"2025-12-18T02:54:42.499Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 4 with size 20","timestamp":"2025-12-18T02:54:42.499Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=4 - 3ms","timestamp":"2025-12-18T02:54:42.502Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=5","timestamp":"2025-12-18T02:54:42.507Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 5","timestamp":"2025-12-18T02:54:42.507Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 5 with size 20","timestamp":"2025-12-18T02:54:42.507Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=5 - 4ms","timestamp":"2025-12-18T02:54:42.510Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Incoming Request: GET /products?page=6","timestamp":"2025-12-18T02:54:42.515Z"}
+{"context":"ProductsController","level":"info","message":"Received request to get products page 6","timestamp":"2025-12-18T02:54:42.515Z"}
+{"context":"ProductsService","level":"info","message":"Fetching products page 6 with size 20","timestamp":"2025-12-18T02:54:42.516Z"}
+{"context":"LoggingInterceptor","level":"info","message":"Outgoing Response: GET /products?page=6 - 3ms","timestamp":"2025-12-18T02:54:42.518Z"}
+{"context":"RoutesResolver","level":"info","message":"ConfigController {/config}:","timestamp":"2025-12-18T02:56:01.555Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/config, GET} route","timestamp":"2025-12-18T02:56:01.557Z"}
+{"context":"RoutesResolver","level":"info","message":"MercadoPagoController {/payment}:","timestamp":"2025-12-18T02:56:01.557Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/payment, POST} route","timestamp":"2025-12-18T02:56:01.558Z"}
+{"context":"RoutesResolver","level":"info","message":"ProductsController {/products}:","timestamp":"2025-12-18T02:56:01.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products, POST} route","timestamp":"2025-12-18T02:56:01.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products, GET} route","timestamp":"2025-12-18T02:56:01.558Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/new, GET} route","timestamp":"2025-12-18T02:56:01.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/highlighted, GET} route","timestamp":"2025-12-18T02:56:01.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/discounted, GET} route","timestamp":"2025-12-18T02:56:01.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, GET} route","timestamp":"2025-12-18T02:56:01.559Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:productId/images, GET} route","timestamp":"2025-12-18T02:56:01.560Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id/price-history, GET} route","timestamp":"2025-12-18T02:56:01.560Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/original-price/:id, GET} route","timestamp":"2025-12-18T02:56:01.560Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/discount-price/:id, GET} route","timestamp":"2025-12-18T02:56:01.560Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/price/:id, GET} route","timestamp":"2025-12-18T02:56:01.561Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/total, POST} route","timestamp":"2025-12-18T02:56:01.561Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/finalTotal, POST} route","timestamp":"2025-12-18T02:56:01.561Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, PUT} route","timestamp":"2025-12-18T02:56:01.561Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, DELETE} route","timestamp":"2025-12-18T02:56:01.561Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-12-18T02:56:01.561Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/google, GET} route","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/google/callback, GET} route","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/profile, GET} route","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, POST} route","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-12-18T02:56:01.562Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, GET} route","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, PUT} route","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, DELETE} route","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RoutesResolver","level":"info","message":"StorageController {/upload}:","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/upload/from-directory, GET} route","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/upload/file, POST} route","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RoutesResolver","level":"info","message":"SalesController {/sales}:","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales, POST} route","timestamp":"2025-12-18T02:56:01.563Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/manual, POST} route","timestamp":"2025-12-18T02:56:01.564Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/shipping, POST} route","timestamp":"2025-12-18T02:56:01.564Z"}
+{"context":"RoutesResolver","level":"info","message":"SalesStatisticsController {/sales/statistics}:","timestamp":"2025-12-18T02:56:01.564Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/statistics, GET} route","timestamp":"2025-12-18T02:56:01.564Z"}
+{"context":"RoutesResolver","level":"info","message":"AnalyticsController {/analytics}:","timestamp":"2025-12-18T02:56:01.564Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/analytics/track, POST} route","timestamp":"2025-12-18T02:56:01.564Z"}
+{"context":"RoutesResolver","level":"info","message":"ShiftsController {/shifts}:","timestamp":"2025-12-18T02:56:01.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts, POST} route","timestamp":"2025-12-18T02:56:01.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts, GET} route","timestamp":"2025-12-18T02:56:01.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/user/:userId, GET} route","timestamp":"2025-12-18T02:56:01.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, GET} route","timestamp":"2025-12-18T02:56:01.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, PATCH} route","timestamp":"2025-12-18T02:56:01.565Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, DELETE} route","timestamp":"2025-12-18T02:56:01.566Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-12-18T02:56:01.567Z"}
+{"context":"RoutesResolver","level":"info","message":"ConfigController {/config}:","timestamp":"2025-12-18T02:57:16.661Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/config, GET} route","timestamp":"2025-12-18T02:57:16.662Z"}
+{"context":"RoutesResolver","level":"info","message":"MercadoPagoController {/payment}:","timestamp":"2025-12-18T02:57:16.663Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/payment, POST} route","timestamp":"2025-12-18T02:57:16.663Z"}
+{"context":"RoutesResolver","level":"info","message":"ProductsController {/products}:","timestamp":"2025-12-18T02:57:16.663Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products, POST} route","timestamp":"2025-12-18T02:57:16.664Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products, GET} route","timestamp":"2025-12-18T02:57:16.664Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/new, GET} route","timestamp":"2025-12-18T02:57:16.664Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/highlighted, GET} route","timestamp":"2025-12-18T02:57:16.665Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/discounted, GET} route","timestamp":"2025-12-18T02:57:16.665Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, GET} route","timestamp":"2025-12-18T02:57:16.665Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:productId/images, GET} route","timestamp":"2025-12-18T02:57:16.665Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id/price-history, GET} route","timestamp":"2025-12-18T02:57:16.666Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/original-price/:id, GET} route","timestamp":"2025-12-18T02:57:16.666Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/discount-price/:id, GET} route","timestamp":"2025-12-18T02:57:16.666Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/price/:id, GET} route","timestamp":"2025-12-18T02:57:16.666Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/total, POST} route","timestamp":"2025-12-18T02:57:16.666Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/finalTotal, POST} route","timestamp":"2025-12-18T02:57:16.667Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, PUT} route","timestamp":"2025-12-18T02:57:16.667Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, DELETE} route","timestamp":"2025-12-18T02:57:16.667Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-12-18T02:57:16.667Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-12-18T02:57:16.667Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/google, GET} route","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/google/callback, GET} route","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/profile, GET} route","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, POST} route","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, GET} route","timestamp":"2025-12-18T02:57:16.668Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, PUT} route","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, DELETE} route","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RoutesResolver","level":"info","message":"StorageController {/upload}:","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/upload/from-directory, GET} route","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/upload/file, POST} route","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RoutesResolver","level":"info","message":"SalesController {/sales}:","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales, POST} route","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/manual, POST} route","timestamp":"2025-12-18T02:57:16.669Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/shipping, POST} route","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RoutesResolver","level":"info","message":"SalesStatisticsController {/sales/statistics}:","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/statistics, GET} route","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RoutesResolver","level":"info","message":"AnalyticsController {/analytics}:","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/analytics/track, POST} route","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RoutesResolver","level":"info","message":"ShiftsController {/shifts}:","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts, POST} route","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts, GET} route","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/user/:userId, GET} route","timestamp":"2025-12-18T02:57:16.670Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, GET} route","timestamp":"2025-12-18T02:57:16.671Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, PATCH} route","timestamp":"2025-12-18T02:57:16.671Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, DELETE} route","timestamp":"2025-12-18T02:57:16.671Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-12-18T02:57:16.673Z"}
+{"context":"RoutesResolver","level":"info","message":"ConfigController {/config}:","timestamp":"2025-12-18T02:57:21.019Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/config, GET} route","timestamp":"2025-12-18T02:57:21.020Z"}
+{"context":"RoutesResolver","level":"info","message":"MercadoPagoController {/payment}:","timestamp":"2025-12-18T02:57:21.020Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/payment, POST} route","timestamp":"2025-12-18T02:57:21.020Z"}
+{"context":"RoutesResolver","level":"info","message":"ProductsController {/products}:","timestamp":"2025-12-18T02:57:21.021Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products, POST} route","timestamp":"2025-12-18T02:57:21.021Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products, GET} route","timestamp":"2025-12-18T02:57:21.021Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/new, GET} route","timestamp":"2025-12-18T02:57:21.022Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/highlighted, GET} route","timestamp":"2025-12-18T02:57:21.022Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/discounted, GET} route","timestamp":"2025-12-18T02:57:21.022Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, GET} route","timestamp":"2025-12-18T02:57:21.022Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:productId/images, GET} route","timestamp":"2025-12-18T02:57:21.023Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id/price-history, GET} route","timestamp":"2025-12-18T02:57:21.023Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/original-price/:id, GET} route","timestamp":"2025-12-18T02:57:21.023Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/discount-price/:id, GET} route","timestamp":"2025-12-18T02:57:21.024Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/price/:id, GET} route","timestamp":"2025-12-18T02:57:21.024Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/total, POST} route","timestamp":"2025-12-18T02:57:21.024Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/finalTotal, POST} route","timestamp":"2025-12-18T02:57:21.024Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, PUT} route","timestamp":"2025-12-18T02:57:21.024Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/products/:id, DELETE} route","timestamp":"2025-12-18T02:57:21.024Z"}
+{"context":"RoutesResolver","level":"info","message":"AuthController {/auth}:","timestamp":"2025-12-18T02:57:21.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/login, POST} route","timestamp":"2025-12-18T02:57:21.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/google, GET} route","timestamp":"2025-12-18T02:57:21.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/google/callback, GET} route","timestamp":"2025-12-18T02:57:21.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/auth/profile, GET} route","timestamp":"2025-12-18T02:57:21.025Z"}
+{"context":"RoutesResolver","level":"info","message":"UsersController {/users}:","timestamp":"2025-12-18T02:57:21.025Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, POST} route","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users, GET} route","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, GET} route","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, PUT} route","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/users/:id, DELETE} route","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RoutesResolver","level":"info","message":"StorageController {/upload}:","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/upload/from-directory, GET} route","timestamp":"2025-12-18T02:57:21.026Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/upload/file, POST} route","timestamp":"2025-12-18T02:57:21.027Z"}
+{"context":"RoutesResolver","level":"info","message":"SalesController {/sales}:","timestamp":"2025-12-18T02:57:21.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales, POST} route","timestamp":"2025-12-18T02:57:21.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/manual, POST} route","timestamp":"2025-12-18T02:57:21.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/shipping, POST} route","timestamp":"2025-12-18T02:57:21.027Z"}
+{"context":"RoutesResolver","level":"info","message":"SalesStatisticsController {/sales/statistics}:","timestamp":"2025-12-18T02:57:21.027Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/sales/statistics, GET} route","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RoutesResolver","level":"info","message":"AnalyticsController {/analytics}:","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/analytics/track, POST} route","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RoutesResolver","level":"info","message":"ShiftsController {/shifts}:","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts, POST} route","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts, GET} route","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/user/:userId, GET} route","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, GET} route","timestamp":"2025-12-18T02:57:21.028Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, PATCH} route","timestamp":"2025-12-18T02:57:21.029Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/shifts/:id, DELETE} route","timestamp":"2025-12-18T02:57:21.029Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","timestamp":"2025-12-18T02:57:21.030Z"}
