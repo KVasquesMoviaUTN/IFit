@@ -27,7 +27,9 @@ export class AuthController {
   @UseGuards(AuthGuard('google'))
   async googleAuthRedirect(@Req() req, @Res() res) {
     const { token } = await this.authService.login(req.user);
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:8080'; // Fallback for dev
+    const frontendUrl = process.env.NODE_ENV === 'production' 
+      ? 'https://modofit.shop' 
+      : (process.env.FRONTEND_URL || 'http://localhost:8080');
     res.redirect(`${frontendUrl}/sso-callback?token=${token}`);
   }
 
