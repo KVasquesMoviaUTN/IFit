@@ -37,18 +37,22 @@ import * as winston from 'winston';
             }),
           ),
         }),
-        new DailyRotateFile({
-          dirname: 'logs',
-          filename: 'application-%DATE%.log',
-          datePattern: 'YYYY-MM-DD',
-          zippedArchive: true,
-          maxSize: '20m',
-          maxFiles: '14d',
-          format: winston.format.combine(
-            winston.format.timestamp(),
-            winston.format.json(),
-          ),
-        }),
+        ...(process.env.NODE_ENV !== 'production'
+          ? [
+              new DailyRotateFile({
+                dirname: 'logs',
+                filename: 'application-%DATE%.log',
+                datePattern: 'YYYY-MM-DD',
+                zippedArchive: true,
+                maxSize: '20m',
+                maxFiles: '14d',
+                format: winston.format.combine(
+                  winston.format.timestamp(),
+                  winston.format.json(),
+                ),
+              }),
+            ]
+          : []),
       ],
     }),
     TypeOrmModule.forRoot(databaseConfig),
