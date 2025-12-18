@@ -42,6 +42,7 @@
   "dependencies": {
     "@mercadopago/sdk-js": "^0.0.3",
     "@mercadopago/sdk-react": "^0.0.23",
+    "@nestjs/cli": "^10.4.9",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.0",
     "@nestjs/core": "^11.0.1",
@@ -78,7 +79,6 @@
   },
   "description": "",
   "devDependencies": {
-    "@nestjs/cli": "^10.4.9",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.1.9",
     "@types/express": "^5.0.0",
