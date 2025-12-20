@@ -36,10 +36,11 @@ export class ProductsController {
   @ApiResponse({ status: 200, description: 'Return all products.' })
   async getProducts(
     @Query("page", new DefaultValuePipe(1), ParseIntPipe) page: number,
-    @Query("pageSize", new DefaultValuePipe(20), ParseIntPipe) pageSize: number
+    @Query("pageSize", new DefaultValuePipe(20), ParseIntPipe) pageSize: number,
+    @Query("search") search?: string
   ) {
-    this.logger.log(`Received request to get products page ${page}`);
-    return this.productsService.findAll(page, pageSize);
+    this.logger.log(`Received request to get products page ${page} with search: ${search}`);
+    return this.productsService.findAll(page, pageSize, search);
   }
 
   @Get("/new")

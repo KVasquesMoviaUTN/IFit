@@ -1,5 +1,5 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { Repository, MoreThan } from "typeorm";
+import { Repository, MoreThan, ILike } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Product } from "./entities/product.entity";
 import { CreateProductDto } from "./dto/create-product.dto";
@@ -39,9 +39,16 @@ export class ProductsService {
     return savedProduct;
   }
 
-  async findAll(page: number, pageSize: number = 20): Promise<{ products: Product[]; totalPages: number; hasNextPage: boolean }> {
-    this.logger.log(`Fetching products page ${page} with size ${pageSize}`);
+  async findAll(page: number, pageSize: number = 20, search?: string): Promise<{ products: Product[]; totalPages: number; hasNextPage: boolean }> {
+    this.logger.log(`Fetching products page ${page} with size ${pageSize} and search: ${search}`);
+    
+    const where: any = {};
+    if (search) {
+      where.name = ILike(`%${search}%`);
+    }
+
     const [products, total] = await this.productsRepository.findAndCount({
+      where,
       relations: ["presentation"],
       order: { display_order: "DESC" },
       skip: (page - 1) * pageSize,
