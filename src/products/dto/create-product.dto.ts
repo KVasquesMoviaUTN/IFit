@@ -58,7 +58,13 @@ export class CreateProductDto {
   @IsOptional()
   @IsString()
   @IsString()
+  @IsString()
   category?: string;
+
+  @ApiPropertyOptional({ description: 'Product highlight', example: 'Nuevo' })
+  @IsOptional()
+  @IsString()
+  highlight?: string;
 
   @ApiPropertyOptional({ description: 'Display product in catalog', example: true })
   @IsOptional()

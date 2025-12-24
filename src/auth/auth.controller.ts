@@ -27,9 +27,21 @@ export class AuthController {
   @UseGuards(AuthGuard('google'))
   async googleAuthRedirect(@Req() req, @Res() res) {
     const { token } = await this.authService.login(req.user);
-    const frontendUrl = process.env.NODE_ENV === 'production' 
+    console.log('NODE_ENV:', process.env.NODE_ENV);
+    console.log('FRONTEND_URL:', process.env.FRONTEND_URL);
+    
+    // Force trim to avoid whitespace issues
+    const nodeEnv = (process.env.NODE_ENV || '').trim();
+    console.log(`Current NODE_ENV: '${nodeEnv}'`);
+    
+    const isProduction = nodeEnv === 'production';
+    console.log('Is Production:', isProduction);
+
+    const frontendUrl = isProduction
       ? 'https://modofit.shop' 
-      : (process.env.FRONTEND_URL || 'http://localhost:8080');
+      : (process.env.FRONTEND_URL || 'http://localhost:3001');
+      
+    console.log('Redirecting to:', frontendUrl);
     res.redirect(`${frontendUrl}/sso-callback?token=${token}`);
   }
 

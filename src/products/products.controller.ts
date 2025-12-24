@@ -4,8 +4,10 @@ import { RolesGuard } from 'src/auth/roles.guard';
 import { Roles } from 'src/auth/roles.decorator';
 import { UpdateProductDto } from "./dto/update-product.dto";
 import { CreateProductDto } from "./dto/create-product.dto";
+import { CreatePresentationDto } from "./dto/create-presentation.dto";
 import { ProductsService } from "./products.service";
 import { Product } from "./entities/product.entity";
+import { Presentation } from "./entities/presentation.entity";
 import { ProductImage } from "./entities/product-image.entity";
 import { ProductPriceHistory } from "./entities/product-price-history.entity";
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiQuery } from '@nestjs/swagger';
@@ -27,6 +29,19 @@ export class ProductsController {
   create(@Body() createProductDto: CreateProductDto): Promise<Product> {
     this.logger.log(`Received request to create product: ${createProductDto.name}`);
     return this.productsService.create(createProductDto);
+  }
+
+  @Post(":id/presentations")
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @Roles('admin')
+  @ApiOperation({ summary: 'Create a new presentation for a product' })
+  @ApiResponse({ status: 201, description: 'The presentation has been successfully created.', type: Presentation })
+  @ApiResponse({ status: 403, description: 'Forbidden.' })
+  @ApiResponse({ status: 404, description: 'Product not found.' })
+  createPresentation(@Param("id", ParseIntPipe) id: number, @Body() createPresentationDto: CreatePresentationDto): Promise<Presentation> {
+    this.logger.log(`Received request to create presentation for product ${id}: ${createPresentationDto.name}`);
+    return this.productsService.createPresentation(id, createPresentationDto);
   }
 
   @Get()

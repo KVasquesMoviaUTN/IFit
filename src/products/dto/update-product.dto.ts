@@ -62,6 +62,11 @@ export class UpdateProductDto {
   @IsString()
   category?: string;
 
+  @ApiPropertyOptional({ description: 'Product highlight', example: 'Nuevo' })
+  @IsOptional()
+  @IsString()
+  highlight?: string;
+
   @ApiPropertyOptional({ description: 'Display product in catalog', example: true })
   @IsOptional()
   @IsBoolean()

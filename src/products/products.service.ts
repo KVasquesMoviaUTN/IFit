@@ -7,6 +7,7 @@ import { UpdateProductDto } from "./dto/update-product.dto";
 import { ProductImage } from "./entities/product-image.entity";
 import { Presentation } from "./entities/presentation.entity";
 import { ProductPriceHistory } from "./entities/product-price-history.entity";
+import { CreatePresentationDto } from "./dto/create-presentation.dto";
 
 @Injectable()
 export class ProductsService {
@@ -20,7 +21,10 @@ export class ProductsService {
     private productImageRepository: Repository<ProductImage>,
 
     @InjectRepository(ProductPriceHistory)
-    private productPriceHistoryRepository: Repository<ProductPriceHistory>
+    private productPriceHistoryRepository: Repository<ProductPriceHistory>,
+
+    @InjectRepository(Presentation)
+    private presentationRepository: Repository<Presentation>
   ) {}
 
   async create(createProductDto: CreateProductDto): Promise<Product> {
@@ -37,6 +41,26 @@ export class ProductsService {
 
     this.logger.log(`Product created with ID: ${savedProduct.id}`);
     return savedProduct;
+  }
+
+  async createPresentation(productId: number, createPresentationDto: CreatePresentationDto): Promise<Presentation> {
+    this.logger.log(`Creating presentation for product ${productId}: ${createPresentationDto.name}`);
+    
+    const product = await this.productsRepository.findOne({ where: { id: productId } });
+    if (!product) {
+      this.logger.error(`Product with ID ${productId} not found`);
+      throw new Error(`Product with ID ${productId} not found`);
+    }
+
+    const presentation = this.presentationRepository.create({
+      ...createPresentationDto,
+      product: product
+    });
+
+    const savedPresentation = await this.presentationRepository.save(presentation);
+    this.logger.log(`Presentation created with ID: ${savedPresentation.id}`);
+    
+    return savedPresentation;
   }
 
   async findAll(page: number, pageSize: number = 20, search?: string): Promise<{ products: Product[]; totalPages: number; hasNextPage: boolean }> {
